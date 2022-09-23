@@ -17,6 +17,12 @@
         "id": "scheduleinstalljq",
         "custom": ""
     },
+    "/boot/config/plugins/user.scripts/scripts/install mediainfo/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install mediainfo/script",
+        "frequency": "boot",
+        "id": "scheduleinstallmediainfo",
+        "custom": ""
+    },
     "/boot/config/plugins/user.scripts/scripts/install nmap/script": {
         "script": "/boot/config/plugins/user.scripts/scripts/install nmap/script",
         "frequency": "boot",
