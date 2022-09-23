@@ -1,0 +1,20 @@
+{
+    "/boot/config/plugins/user.scripts/scripts/install iperf3/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install iperf3/script",
+        "frequency": "boot",
+        "id": "scheduleinstalliperf3",
+        "custom": ""
+    },
+    "/boot/config/plugins/user.scripts/scripts/install jq/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install jq/script",
+        "frequency": "boot",
+        "id": "scheduleinstalljq",
+        "custom": ""
+    },
+    "/boot/config/plugins/user.scripts/scripts/install nmap/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install nmap/script",
+        "frequency": "boot",
+        "id": "scheduleinstallnmap",
+        "custom": ""
+    }
+}
