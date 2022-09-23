@@ -1,4 +1,10 @@
 {
+    "/boot/config/plugins/user.scripts/scripts/install borg/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install borg/script",
+        "frequency": "boot",
+        "id": "scheduleinstallborg",
+        "custom": ""
+    },
     "/boot/config/plugins/user.scripts/scripts/install iperf3/script": {
         "script": "/boot/config/plugins/user.scripts/scripts/install iperf3/script",
         "frequency": "boot",
