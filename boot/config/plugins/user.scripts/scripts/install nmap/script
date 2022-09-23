@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# nmap (network scanner) Nmap ("Network Mapper") is an open source utility for network exploration 
+# or security auditing. It was designed to rapidly scan large networks, although it works fine 
+# against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are 
+# available on the network, what services (ports) they are offering, what operating system (and 
+# OS version) they are running, what type of packet filters/firewalls are in use, and dozens of 
+# other characteristics. Nmap runs on most types of computers, and both console and graphical 
+# versions are available.
+# 
+# Usage: nmap [Scan Type(s)] [Options] {target specification}
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/n/nmap-7.92-x86_64-1.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
