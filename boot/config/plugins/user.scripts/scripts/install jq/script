@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# jq is like sed for JSON data - you can use it to slice and filter and map 
+# and transform structured data with the same ease that sed, awk, grep and 
+# friends let you play with text.
+# 
+# Usage:  jq [options] <jq filter> [file...]
+#         jq [options] --args <jq filter> [strings...]
+#         jq [options] --jsonargs <jq filter> [JSON_TEXTS...]
+        
+PACKAGE="https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+chmod +x "${PACKAGE##*/}"
+
+mv "${PACKAGE##*/}" /usr/local/bin/jq
