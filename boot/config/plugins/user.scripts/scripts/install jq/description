@@ -1,3 +1,4 @@
 Install jq and dependencies<br>
 Set the Cron to 'At First Array Start Only'<br>
+Note, should only be required for versions of UnRaid pre v6.10 as its part of the default installation after that<br>
 (/boot/config/plugins/user.scripts/scripts/install jq)
