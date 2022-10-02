@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# unrar is a freeware app made available by RARLAB
+
+PACKAGE="https://download.salixos.org/x86_64/15.0/salix/ap/unrar-6.1.6-x86_64-1gv.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
