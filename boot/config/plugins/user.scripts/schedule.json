@@ -23,6 +23,12 @@
         "id": "scheduleinstallmediainfo",
         "custom": ""
     },
+        "/boot/config/plugins/user.scripts/scripts/install ncdu/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install ncdu/script",
+        "frequency": "boot",
+        "id": "scheduleinstallncdu",
+        "custom": ""
+    },
     "/boot/config/plugins/user.scripts/scripts/install nmap/script": {
         "script": "/boot/config/plugins/user.scripts/scripts/install nmap/script",
         "frequency": "boot",
