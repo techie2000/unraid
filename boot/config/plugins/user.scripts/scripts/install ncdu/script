@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# NCDU is a disk usage analyzer with an ncurses interface, aimed to be run on a
+# remote server where you don't have an entire graphical setup, but have
+# to do with a simple SSH connection. Ncdu aims to be fast, simple and
+# easy to use, and should be able to run in any minimal POSIX-like
+# environment with ncurses installed.
+
+PACKAGE="https://ftp.sotirov-bg.net/pub/contrib/slackware/packages/slackware64-15.0/ncdu-1.17-x86_64-1gds.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
