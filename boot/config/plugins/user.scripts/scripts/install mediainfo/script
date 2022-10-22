@@ -38,7 +38,7 @@ wget $PACKAGE
 
 
 
-# covert it to Slack package
+# convert it to Slack package
 deb2tgz-0.1.1/deb2tgz mediainfo_20.09-1_amd64.deb
 
 # and install it
