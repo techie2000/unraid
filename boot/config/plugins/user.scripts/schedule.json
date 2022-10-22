@@ -1,5 +1,10 @@
 {
-    "/boot/config/plugins/user.scripts/scripts/install borg/script": {
+    "/boot/config/plugins/user.scripts/scripts/install atop/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install atop/script",
+        "frequency": "boot",
+        "id": "scheduleinstallatop",
+        "custom": ""
+    },    "/boot/config/plugins/user.scripts/scripts/install borg/script": {
         "script": "/boot/config/plugins/user.scripts/scripts/install borg/script",
         "frequency": "boot",
         "id": "scheduleinstallborg",
@@ -33,6 +38,12 @@
         "script": "/boot/config/plugins/user.scripts/scripts/install nmap/script",
         "frequency": "boot",
         "id": "scheduleinstallnmap",
+        "custom": ""
+    },
+    "/boot/config/plugins/user.scripts/scripts/install unrar/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install unrar/script",
+        "frequency": "boot",
+        "id": "scheduleinstallunrar",
         "custom": ""
     }
 }
