@@ -10,11 +10,11 @@ cd /tmp/extras || exit
 
 wget $PACKAGE
 
-tar xvzf 0.1.1.tar.gz
+tar xvzf "${PACKAGE##*/}"
 
 
 
-# and take care of pre-requuisites
+# and take care of pre-requisites
 PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.39-x86_64-1cf.txz"
 
 wget $PACKAGE
@@ -23,7 +23,7 @@ upgradepkg --install-new "${PACKAGE##*/}"
 
 
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/libmediainfo/libmediainfo-22.06-x86_64-2cf.txz"
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/libmediainfo/libmediainfo-22.09-x86_64-1cf.txz"
 
 wget $PACKAGE
 
@@ -39,7 +39,8 @@ wget $PACKAGE
 
 
 # convert it to Slack package
-deb2tgz-0.1.1/deb2tgz mediainfo_20.09-1_amd64.deb
+deb2tgz-0.1.1/deb2tgz "${PACKAGE##*/}"
 
 # and install it
-upgradepkg --install-new "mediainfo_20.09-1_amd64.tgz"
+PACKAGE="${PACKAGE##*/}"
+upgradepkg --install-new "${PACKAGE/.deb/.tgz}"
