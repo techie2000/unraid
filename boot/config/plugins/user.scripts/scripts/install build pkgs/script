@@ -14,6 +14,10 @@ PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/automake-
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/cmake-3.21.4-x86_64-1.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/l/gc-8.0.6-x86_64-1.txz"
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
