@@ -1,0 +1,11 @@
+Removes the 8 entries/rows per minute that cards like the LSI 9201-16e wtithout sufficient airflow <br><br>
+e.g. of what rows will be removed from your syslog<br>
+Oct 23 14:56:01 Tower1 kernel: mpt2sas_cm2: Temperature Threshold flags 0     exceeded for Sensor: 0 !!!
+<br>Oct 23 14:56:01 Tower1 kernel: mpt2sas_cm2: Current Temp In Celsius: 87<br>
+Oct 23 14:56:02 Tower1 kernel: mpt2sas_cm1: Temperature Threshold flags 0     exceeded for Sensor: 0 !!!<br>
+Oct 23 14:56:02 Tower1 kernel: mpt2sas_cm1: Current Temp In Celsius: 72<br>
+Oct 23 14:56:31 Tower1 kernel: mpt2sas_cm2: Temperature Threshold flags 0     exceeded for Sensor: 0 !!!<br>
+Oct 23 14:56:31 Tower1 kernel: mpt2sas_cm2: Current Temp In Celsius: 87<br>
+Oct 23 14:56:32 Tower1 kernel: mpt2sas_cm1: Temperature Threshold flags 0     exceeded for Sensor: 0 !!!<br>
+Oct 23 14:56:32 Tower1 kernel: mpt2sas_cm1: Current Temp In Celsius: 72<br><br>
+(/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog)
