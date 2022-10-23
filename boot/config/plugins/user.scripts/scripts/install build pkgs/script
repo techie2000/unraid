@@ -62,6 +62,10 @@ PACKAGE="https://mirrors.slackware.com/slackware/slackware64-15.0/slackware64/d/
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/n/libgpg-error-1.44-x86_64-1.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/libtool-2.4.6-x86_64-18.txz"
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
