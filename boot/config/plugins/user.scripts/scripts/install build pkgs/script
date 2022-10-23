@@ -81,3 +81,7 @@ upgradepkg --install-new "${PACKAGE##*/}"
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/pkg-config-0.29.2-x86_64-4.txz"
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/l/zlib-1.2.11-x86_64-4.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
