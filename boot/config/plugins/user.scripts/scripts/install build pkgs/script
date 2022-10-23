@@ -34,6 +34,18 @@ PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/gcc-g++-1
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/l/glib-1.2.10-x86_64-9.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/l/glib2-2.70.3-x86_64-1.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/l/glibc-2.33-x86_64-5.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/libtool-2.4.6-x86_64-18.txz"
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
