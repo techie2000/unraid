@@ -50,6 +50,10 @@ PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/guile-3.0
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
+PACKAGE="https://mirrors.slackware.com/slackware/slackware64-15.0/slackware64/d/kernel-headers-5.15.19-x86-2.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/libtool-2.4.6-x86_64-18.txz"
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
