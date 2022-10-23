@@ -1,4 +1,10 @@
 {
+    "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script",
+        "frequency": "hourly",
+        "id": "scheduleDeletempt2sasnoisefromsyslog",
+        "custom": ""
+    },
     "/boot/config/plugins/user.scripts/scripts/install atop/script": {
         "script": "/boot/config/plugins/user.scripts/scripts/install atop/script",
         "frequency": "boot",
