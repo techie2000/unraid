@@ -1,0 +1,3 @@
+Install packages that have been used at one time or another when building/installing other packages (and dependencies)<br>
+Set the Cron to 'At First Array Start Only'<br>
+(/boot/config/plugins/user.scripts/scripts/install build pkgs)
