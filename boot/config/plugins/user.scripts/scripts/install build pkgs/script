@@ -57,3 +57,7 @@ upgradepkg --install-new "${PACKAGE##*/}"
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/m4-1.4.19-x86_64-1.txz"
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/make-4.3-x86_64-3.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
