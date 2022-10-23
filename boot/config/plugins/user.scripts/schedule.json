@@ -46,6 +46,12 @@
         "id": "scheduleinstallnmap",
         "custom": ""
     },
+    "/boot/config/plugins/user.scripts/scripts/install screen/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/install screen/script",
+        "frequency": "boot",
+        "id": "scheduleinstallscreen",
+        "custom": ""
+    },
     "/boot/config/plugins/user.scripts/scripts/install unrar/script": {
         "script": "/boot/config/plugins/user.scripts/scripts/install unrar/script",
         "frequency": "boot",
