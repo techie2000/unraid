@@ -22,7 +22,7 @@ PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/cmake-3.2
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
-PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/flex-2.6.4-x86_64-5.txz@
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/flex-2.6.4-x86_64-5.txz"
 wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
