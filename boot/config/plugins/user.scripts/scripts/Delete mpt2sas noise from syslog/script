@@ -1,0 +1,2 @@
+#!/bin/bash
+sed -i '/\(mpt2sas_cm[12]: Temperature Threshold flags\|mpt2sas_cm[12]: Current Temp In Celsius\)/d' /var/log/syslog
