@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# We'll make use of a debian package to install iptraf-ng
+# Therefore we will need deb2tgz
+
+PACKAGE="https://github.com/jbarrett/deb2tgz/archive/refs/tags/0.1.1.tar.gz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+tar xvzf "${PACKAGE##*/}"
+
+
+
+# Get the debian iptraf-ng package
+PACKAGE="http://ftp.de.debian.org/debian/pool/main/i/iptraf-ng/iptraf-ng_1.2.1-1_amd64.deb"
+
+wget $PACKAGE
+
+
+
+# convert it to Slack package
+deb2tgz-0.1.1/deb2tgz "${PACKAGE##*/}"
+
+# and install it
+PACKAGE="${PACKAGE##*/}"
+upgradepkg --install-new "${PACKAGE/.deb/.tgz}"
