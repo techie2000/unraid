@@ -7,7 +7,12 @@ sed -i -e 's/^telnet/#telnet/' /etc/inetd.conf
 
 # do not touch above this line (setup by Lime)
 
+
 # reusable on any box
+
+# my personal scripts
+cp -r /boot/custom/* /usr/local/bin
+chmod +x /usr/local/bin/*.sh
 
 cat /boot/config/.my_bashrc >> /root/.bashrc
 cat /boot/config/.my_bash_aliases >> /root/.bash_aliases
