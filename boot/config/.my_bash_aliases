@@ -62,10 +62,20 @@ if [[ "${PERSONAL_ls}" == "true" ]]
 fi
 
 # list what node modules are installed on the system
-alias lsnode='lsl -lartih /usr/lib64/node_modules/'
+if [[ "${PERSONAL_ls}" == "true" ]]
+  then
+    alias lsnode='lsl /usr/lib64/node_modules/'
+  else
+    alias lsnode='lsl --almost-all --color --human-readable --inode -l /usr/lib64/node_modules/'
+fi
 
 # list what packages are installed on the system
-alias lspkgs='lsl /var/log/packages/'
-alias showpkgs='lspkgs'
+if [[ "${PERSONAL_ls}" == "true" ]]
+  then
+    alias lspkgs='lsl /var/log/packages/'
+  else
+    alias lspkgs='lsl --almost-all --color --human-readable --inode -l /var/log/packages/'
+fi
 
 alias rm='rm --preserve-root' # safety net
+alias showpkgs='lspkgs'
