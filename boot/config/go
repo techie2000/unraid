@@ -48,3 +48,7 @@ if [[ "${PERSONAL_ls}" == "true" ]]
         alias ls='ls --almost-all --color --human-readable --inode'
         alias lsl='ls --almost-all --color --human-readable --inode -l'
 fi
+
+# list what packages are installed on the system
+alias lspkgs='ls -l /var/log/packages/'
+alias showpkgs='lspkgs'
