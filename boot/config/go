@@ -57,6 +57,11 @@ alias infoKernelName='uname --kernel-name'
 alias infoKernelRelease='uname --kernel-release'
 alias infoProcessor='uname --processor'
 
+# iostat flags
+# -d m n = run continously every m seconds for n times
+# -t   = print the time of each report
+alias io='iostat -d 5 --human -t'
+
 # invoke ls with personal settings
 if [[ "${PERSONAL_ls}" == "true" ]]
   then
