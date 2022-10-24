@@ -79,3 +79,6 @@ fi
 
 alias rm='rm --preserve-root' # safety net
 alias showpkgs='lspkgs'
+
+# list top 20 cpu consuming  processes
+alias topcpu='ps aux --sort=-pcpu | head -20'
