@@ -5,9 +5,12 @@
 sed -i -e 's/^telnet/#telnet/' /etc/inetd.conf
 /etc/rc.d/rc.inetd restart
 
-
+# do not touch above this line
 
 # reusable
+
+# Personalisation
+PERSONAL_df=true
 
 # check if a package is installed
 isPackageInstalled () {
@@ -22,6 +25,12 @@ isPackageInstalled () {
 alias chown='chown --preserve-root' # safety net
 alias chmod='chmod --preserve-root' # safety net
 alias chgrp='chgrp --preserve-root' # safety net
+
+# invoke df with personal settings
+if [[ "${PERSONAL_df}" == "true" ]]
+  then
+        alias df='df -kh | grep '"'disk[^s]\|cache\|shm\|user0\|log'"
+fi
 
 # invoke a du alternative if it's installed
 if isPackageInstalled ncdu; then
