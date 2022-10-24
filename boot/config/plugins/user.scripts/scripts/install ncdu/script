@@ -7,6 +7,8 @@
 # environment with ncurses installed.
 
 PACKAGE="https://ftp.sotirov-bg.net/pub/contrib/slackware/packages/slackware64-15.0/ncdu-1.17-x86_64-1gds.txz"
+CREATE_ALIAS=true
+FOLLOW_SYMLINKS=true
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
@@ -14,3 +16,16 @@ cd /tmp/extras || exit
 wget $PACKAGE
 
 upgradepkg --install-new "${PACKAGE##*/}"
+
+if [[ "${CREATE_ALIAS}" == "false" ]]
+  then
+    echo "ncdu can be used alongside du"
+  else
+    if [[ "${FOLLOW_SYMLINKS}" == "false" ]]
+      then
+        alias du='ncdu'
+      else
+        alias du='ncdu --follow-symlinks'
+    fi
+  echo "du can only be used if you first unalias du (to turn off the alias which now points du to ncdu)"
+fi
