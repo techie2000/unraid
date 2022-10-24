@@ -29,6 +29,12 @@
     "id": "scheduleinstalliperf3",
     "custom": ""
   },
+  "/boot/config/plugins/user.scripts/scripts/install iptraf-ng/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install iptraf-ng/script",
+    "frequency": "boot",
+    "id": "scheduleinstalliptraf-ng",
+    "custom": ""
+  },
   "/boot/config/plugins/user.scripts/scripts/install jq/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install jq/script",
     "frequency": "boot",
