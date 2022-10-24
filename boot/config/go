@@ -19,6 +19,10 @@ isPackageInstalled () {
 
 # aliases
 
+alias chown='chown --preserve-root' # safety net
+alias chmod='chmod --preserve-root' # safety net
+alias chgrp='chgrp --preserve-root' # safety net
+
 # invoke a du alternative if it's installed
 if isPackageInstalled ncdu; then
         alias du='ncdu' ;
