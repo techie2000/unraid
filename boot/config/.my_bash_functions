@@ -13,6 +13,51 @@ infoMacVendor() {
           fi
  }
 
+#check directory exists
+isDirectoryAvailable() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply a directory name to check its existence"
+                else
+                        if [ -d "$1" ]
+                                then
+                                        true
+                                else
+                                        false
+                        fi
+       fi
+}
+
+#check file exists
+isFileAvailable() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply a filename to check its existence"
+                else
+                        if [ -f "$1" ]
+                                then
+                                        true
+                                else
+                                        false
+                        fi
+       fi
+}
+
+# check if string is a number
+isNum() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply a string in order to determine if it's a number"
+                else
+                        if isnum "$1"
+                                then
+                                       true
+                                else
+                                       false
+                        fi
+        fi
+}
+
 # check if a package is installed
 isPackageInstalled () {
         type "$1" &> /dev/null ;
