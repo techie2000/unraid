@@ -1,3 +1,18 @@
+# identify the vendor for a given mac
+infoMacVendor() {
+         if [ $# -eq 0 ]
+                 then
+                         echo "Please supply a valid mac address"
+                 else
+                         if [[ "$1" =~ ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}\\.[0-9a-fA-F]{4}\\.[0-9a-fA-F]{4})$ ]]
+                                 then
+                                        curl http://api.macvendors.com/"$1"
+                                 else
+                                        echo "$1 is an invalid MAC address"
+                         fi
+          fi
+ }
+
 # check if a package is installed
 isPackageInstalled () {
         type "$1" &> /dev/null ;
