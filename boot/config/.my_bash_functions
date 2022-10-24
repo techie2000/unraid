@@ -1,0 +1,4 @@
+# check if a package is installed
+isPackageInstalled () {
+        type "$1" &> /dev/null ;
+}
