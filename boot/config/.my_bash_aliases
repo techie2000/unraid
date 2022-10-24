@@ -45,10 +45,20 @@ alias infoProcessor='uname --processor'
 alias io='iostat -d 5 --human -t'
 
 # invoke ls with personal settings
+# ls flags :
+#   --almost-all           do not list implied . and ..
+#   --color[=WHEN]         color the output WHEN
+#   --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+#   --inode                print the index number of each file
+#   -l                     use a long listing format
+#   --reverse              reverse order while sorting
+#   -t                     sort by time, newest first
 if [[ "${PERSONAL_ls}" == "true" ]]
   then
         alias ls='ls --almost-all --color --human-readable'
+        alias lst='ls --almost-all --color --human-readable --reverse -t'
         alias lsl='ls --almost-all --color --human-readable --inode -l'
+        alias lslt='ls --almost-all --color --human-readable --inode -l --reverse -t'
 fi
 
 # list what packages are installed on the system
