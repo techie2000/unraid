@@ -1,0 +1,58 @@
+# Personalisation
+PERSONAL_df=true
+PERSONAL_hardlink=true
+PERSONAL_ls=true
+
+
+alias chgrp='chgrp --preserve-root' # safety net
+alias chmod='chmod --preserve-root' # safety net
+alias chown='chown --preserve-root' # safety net
+
+# pidstat flags
+# run continously every m seconds (for n times)
+alias cpu='pidstat 5'
+
+# invoke df with personal settings
+if [[ "${PERSONAL_df}" == "true" ]]
+  then
+        alias df='df -kh | grep '"'disk[^s]\|cache\|shm\|user0\|log'"
+fi
+
+# invoke a du alternative if it's installed
+if isPackageInstalled ncdu; then
+        alias du='ncdu' ;
+else
+        alias du='echo "ncdu is not installed :( Consider installing it!"' ;
+fi
+
+# invoke hardlink with personal settings
+if [[ "${PERSONAL_hardlink}" == "true" ]]
+  then
+        alias hardlink='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose'
+        alias hardlinkdryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --dry-run --verbose'
+fi
+
+alias infoArchitecture='uname --machine'
+alias infoHost='infoArchitecture; infoProcessor; infoKernelName; infoKernelRelease'
+alias infoKernel='infoKernelName; infoKernelRelease'
+alias infoKernelName='uname --kernel-name'
+alias infoKernelRelease='uname --kernel-release'
+alias infoProcessor='uname --processor'
+
+# iostat flags
+# -d m n = run continously every m seconds for n times
+# -t   = print the time of each report
+alias io='iostat -d 5 --human -t'
+
+# invoke ls with personal settings
+if [[ "${PERSONAL_ls}" == "true" ]]
+  then
+        alias ls='ls --almost-all --color --human-readable'
+        alias lsl='ls --almost-all --color --human-readable --inode -l'
+fi
+
+# list what packages are installed on the system
+alias lspkgs='ls -l /var/log/packages/'
+alias showpkgs='lspkgs'
+
+alias rm='rm --preserve-root' # safety net
