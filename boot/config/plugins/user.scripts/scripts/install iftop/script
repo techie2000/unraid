@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# iftop does for network usage what top(1) does for CPU usage.
+# It listens to network traffic on a named interface and displays a
+# table of current bandwidth usage by pairs of hosts. Handy for
+# answering the question "why is our link so slow?".
+# Homepage: http://www.ex-parrot.com/~pdw/iftop/
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/n/iftop-1.0pre4-x86_64-4.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
