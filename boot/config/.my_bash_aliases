@@ -61,8 +61,11 @@ if [[ "${PERSONAL_ls}" == "true" ]]
         alias lslt='ls --almost-all --color --human-readable --inode -l --reverse -t'
 fi
 
+# list what node modules are installed on the system
+alias lsnode='lsl -lartih /usr/lib64/node_modules/'
+
 # list what packages are installed on the system
-alias lspkgs='ls -l /var/log/packages/'
+alias lspkgs='lsl /var/log/packages/'
 alias showpkgs='lspkgs'
 
 alias rm='rm --preserve-root' # safety net
