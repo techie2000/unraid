@@ -29,6 +29,14 @@ alias chown='chown --preserve-root' # safety net
 alias rm='rm --preserve-root' # safety net
 
 
+alias infoArchitecture='uname --machine'
+alias infoHost='infoArchitecture; infoProcessor; infoKernelName; infoKernelRelease'
+alias infoKernel='infoKernelName; infoKernelRelease'
+alias infoKernelName='uname --kernel-name'
+alias infoKernelRelease='uname --kernel-release'
+alias infoProcessor='uname --processor'
+
+
 # invoke df with personal settings
 if [[ "${PERSONAL_df}" == "true" ]]
   then
