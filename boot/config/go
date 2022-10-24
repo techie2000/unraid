@@ -46,7 +46,8 @@ fi
 # invoke hardlink with personal settings
 if [[ "${PERSONAL_hardlink}" == "true" ]]
   then
-        alias hardlink='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --dry-run --verbose'
+        alias hardlink='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose'
+        alias hardlinkdryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --dry-run --verbose'
 fi
 
 alias infoArchitecture='uname --machine'
