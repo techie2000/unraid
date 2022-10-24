@@ -14,3 +14,6 @@ cat /boot/config/.my_bash_aliases >> /root/.bash_aliases
 cat /boot/config/.my_bash_functions >> /root/.bash_functions
 cat /boot/config/.my_bash_prompt >> /root/.bash_prompt
 cat /boot/config/.my_bash_profile >> /root/.bash_profile
+
+# reusable on THIS box
+cat /boot/config/.my_machine_aliases >> /root/.bash_aliases
