@@ -20,9 +20,9 @@ fi
 
 # invoke a du alternative if it's installed
 if isPackageInstalled ncdu; then
-        alias du='ncdu' ;
+        alias du='ncdu' 
 else
-        alias du='echo "ncdu is not installed :( Consider installing it!"' ;
+        echo "ncdu is not installed :( Consider installing it!"
 fi
 
 # invoke hardlink with personal settings
@@ -82,3 +82,10 @@ alias showpkgs='lspkgs'
 
 # list top 20 cpu consuming  processes
 alias topcpu='ps aux --sort=-pcpu | head -20'
+
+# who is on my network
+if isPackageInstalled nmap; then
+        alias whosonmynetwork='nmap -sP 192.168.0.0/24'
+else
+        echo "nmap is not installed :( Consider installing it!"
+fi
