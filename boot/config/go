@@ -11,6 +11,7 @@ sed -i -e 's/^telnet/#telnet/' /etc/inetd.conf
 
 # Personalisation
 PERSONAL_df=true
+PERSONAL_ls=true
 
 # check if a package is installed
 isPackageInstalled () {
@@ -39,4 +40,11 @@ if isPackageInstalled ncdu; then
         alias du='ncdu' ;
 else
         alias du='echo "ncdu is not installed :( Consider installing it!"' ;
+fi
+
+# invoke ls with personal settings
+if [[ "${PERSONAL_ls}" == "true" ]]
+  then
+        alias ls='ls --almost-all --color --human-readable --inode'
+        alias lsl='ls --almost-all --color --human-readable --inode -l'
 fi
