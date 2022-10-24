@@ -1,3 +1,23 @@
+# find a file by its inum
+findi() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply an inum"
+                else
+                        find . -inum "$1"
+        fi
+}
+
+# find a file by its name
+findn() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply (part of) a filename"
+                else
+                        find . -iname "$1"
+        fi
+}
+
 # identify the vendor for a given mac
 infoMacVendor() {
          if [ $# -eq 0 ]
