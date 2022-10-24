@@ -5,9 +5,11 @@
 sed -i -e 's/^telnet/#telnet/' /etc/inetd.conf
 /etc/rc.d/rc.inetd restart
 
-# do not touch above this line
+# do not touch above this line (setup by Lime)
 
-# reusable
+# reusable on any box
+
+cat /boot/config/.my_bash_functions >> /root/.bash_functions
 
 # Personalisation
 PERSONAL_df=true
@@ -76,3 +78,6 @@ fi
 # list what packages are installed on the system
 alias lspkgs='ls -l /var/log/packages/'
 alias showpkgs='lspkgs'
+
+
+# this server specific
