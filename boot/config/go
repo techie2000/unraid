@@ -1,0 +1,27 @@
+#!/bin/bash
+# Start the Management Utility
+/usr/local/sbin/emhttp -p 81 &
+
+sed -i -e 's/^telnet/#telnet/' /etc/inetd.conf
+/etc/rc.d/rc.inetd restart
+
+
+
+# reusable
+
+# check if a package is installed
+isPackageInstalled () {
+        type "$1" &> /dev/null ;
+}
+
+
+
+
+# aliases
+
+# invoke a du alternative if it's installed
+if isPackageInstalled ncdu; then
+        alias du='ncdu' ;
+else
+        alias du='echo "ncdu is not installed :( Consider installing it!"' ;
+fi
