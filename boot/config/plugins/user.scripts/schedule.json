@@ -1,61 +1,68 @@
 {
-    "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script",
-        "frequency": "hourly",
-        "id": "scheduleDeletempt2sasnoisefromsyslog",
-        "custom": ""
-    },
-    "/boot/config/plugins/user.scripts/scripts/install atop/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install atop/script",
-        "frequency": "boot",
-        "id": "scheduleinstallatop",
-        "custom": ""
-    },    "/boot/config/plugins/user.scripts/scripts/install borg/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install borg/script",
-        "frequency": "boot",
-        "id": "scheduleinstallborg",
-        "custom": ""
-    },
-    "/boot/config/plugins/user.scripts/scripts/install iperf3/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install iperf3/script",
-        "frequency": "boot",
-        "id": "scheduleinstalliperf3",
-        "custom": ""
-    },
-    "/boot/config/plugins/user.scripts/scripts/install jq/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install jq/script",
-        "frequency": "boot",
-        "id": "scheduleinstalljq",
-        "custom": ""
-    },
-    "/boot/config/plugins/user.scripts/scripts/install mediainfo/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install mediainfo/script",
-        "frequency": "boot",
-        "id": "scheduleinstallmediainfo",
-        "custom": ""
-    },
-        "/boot/config/plugins/user.scripts/scripts/install ncdu/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install ncdu/script",
-        "frequency": "boot",
-        "id": "scheduleinstallncdu",
-        "custom": ""
-    },
-    "/boot/config/plugins/user.scripts/scripts/install nmap/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install nmap/script",
-        "frequency": "boot",
-        "id": "scheduleinstallnmap",
-        "custom": ""
-    },
-    "/boot/config/plugins/user.scripts/scripts/install screen/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install screen/script",
-        "frequency": "boot",
-        "id": "scheduleinstallscreen",
-        "custom": ""
-    },
-    "/boot/config/plugins/user.scripts/scripts/install unrar/script": {
-        "script": "/boot/config/plugins/user.scripts/scripts/install unrar/script",
-        "frequency": "boot",
-        "id": "scheduleinstallunrar",
-        "custom": ""
-    }
+  "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script",
+    "frequency": "hourly",
+    "id": "scheduleDeletempt2sasnoisefromsyslog",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install atop/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install atop/script",
+    "frequency": "boot",
+    "id": "scheduleinstallatop",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install borg/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install borg/script",
+    "frequency": "boot",
+    "id": "scheduleinstallborg",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install iftop/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install iftop/script",
+    "frequency": "boot",
+    "id": "scheduleinstalliftop",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install iperf3/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install iperf3/script",
+    "frequency": "boot",
+    "id": "scheduleinstalliperf3",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install jq/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install jq/script",
+    "frequency": "boot",
+    "id": "scheduleinstalljq",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install mediainfo/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install mediainfo/script",
+    "frequency": "boot",
+    "id": "scheduleinstallmediainfo",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install ncdu/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install ncdu/script",
+    "frequency": "boot",
+    "id": "scheduleinstallncdu",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install nmap/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install nmap/script",
+    "frequency": "boot",
+    "id": "scheduleinstallnmap",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install screen/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install screen/script",
+    "frequency": "boot",
+    "id": "scheduleinstallscreen",
+    "custom": ""
+  },
+  "/boot/config/plugins/user.scripts/scripts/install unrar/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install unrar/script",
+    "frequency": "boot",
+    "id": "scheduleinstallunrar",
+    "custom": ""
+  }
 }
