@@ -11,6 +11,7 @@ sed -i -e 's/^telnet/#telnet/' /etc/inetd.conf
 
 # Personalisation
 PERSONAL_df=true
+PERSONAL_hardlink=true
 PERSONAL_ls=true
 
 # check if a package is installed
@@ -40,6 +41,12 @@ if isPackageInstalled ncdu; then
         alias du='ncdu' ;
 else
         alias du='echo "ncdu is not installed :( Consider installing it!"' ;
+fi
+
+# invoke hardlink with personal settings
+if [[ "${PERSONAL_hardlink}" == "true" ]]
+  then
+        alias hardlink='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --dry-run --verbose'
 fi
 
 alias infoArchitecture='uname --machine'
