@@ -9,17 +9,19 @@ sed -i -e 's/^telnet/#telnet/' /etc/inetd.conf
 
 # reusable on any box
 
+cat /boot/config/.my_bashrc >> /root/.bashrc
+cat /boot/config/.my_bash_aliases >> /root/.bash_aliases
 cat /boot/config/.my_bash_functions >> /root/.bash_functions
+cat /boot/config/.my_bash_prompt >> /root/.bash_prompt
+cat /boot/config/.my_bash_profile >> /root/.bash_profile
+
 
 # Personalisation
 PERSONAL_df=true
 PERSONAL_hardlink=true
 PERSONAL_ls=true
 
-# check if a package is installed
-isPackageInstalled () {
-        type "$1" &> /dev/null ;
-}
+
 
 
 
