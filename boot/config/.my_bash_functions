@@ -82,3 +82,44 @@ isNum() {
 isPackageInstalled () {
         type "$1" &> /dev/null ;
 }
+
+# Detect OS and Services	
+nmapos() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply an ip address or servername"
+                else
+                        nmap -A "$1"
+        fi
+}
+
+# Detect OS and Services (More aggressive Service Detection)	
+nmapos2() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply an ip address or servername"
+                else
+                        nmap -sV --version-intensity 5 "$1"
+        fi
+}
+
+# Detect OS and Services (Digging deeper with NSE Scripts)
+# Scan using default safe scripts
+nmapos3() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply an ip address or servername"
+                else
+                        nmap -sV -sC "$1"
+        fi
+}
+
+# Scan for vulnerabilities
+nmapv() {
+        if [ $# -eq 0 ]
+                then
+                        echo "Please supply an ip address or servername"
+                else
+                        nmap -sV --script vulners "$1"
+        fi
+}
