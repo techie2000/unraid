@@ -1,3 +1,6 @@
+
+# above here was added by .my_bashrc
+
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
@@ -6,3 +9,5 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# above here was added by .my_bashrc
