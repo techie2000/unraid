@@ -8,6 +8,13 @@ alias chgrp='chgrp --preserve-root' # safety net
 alias chmod='chmod --preserve-root' # safety net
 alias chown='chown --preserve-root' # safety net
 
+# invoke an alternative way to copy files
+if isPackageInstalled rsync; then
+        alias cp='rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs'
+else
+        echo "rsync is not installed :( Consider installing it!"
+fi
+
 # pidstat flags
 # run continously every m seconds (for n times)
 alias cpu='pidstat 5'
@@ -75,6 +82,13 @@ if [[ "${PERSONAL_ls}" == "true" ]]
     alias lspkgs='lsl /var/log/packages/'
   else
     alias lspkgs='lsl --almost-all --color --human-readable --inode -l /var/log/packages/'
+fi
+
+# invoke an alternative way to move files
+if isPackageInstalled rsync; then
+        alias mv='rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs --remove-source-files'
+else
+        echo "rsync is not installed :( Consider installing it!"
 fi
 
 alias rm='rm --preserve-root' # safety net
