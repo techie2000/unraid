@@ -1,3 +1,6 @@
+
+# below here was added by .my_bash_aliases
+
 # Personalisation
 PERSONAL_df=true
 PERSONAL_hardlink=true
@@ -118,3 +121,5 @@ if isPackageInstalled nmap; then
 else
         echo "nmap is not installed :( Consider installing it!"
 fi
+
+# above here was added by .my_bash_aliases
