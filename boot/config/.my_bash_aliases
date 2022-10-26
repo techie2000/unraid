@@ -101,7 +101,7 @@ alias jun='cal -m 06'
 
 # invoke an alternative way to move files
 if isPackageInstalled rsync; then
-        alias mv='rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs --remove-source-files'
+        alias mv='rsync --archive --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
 else
         echo "rsync is not installed :( Consider installing it!"
 fi
