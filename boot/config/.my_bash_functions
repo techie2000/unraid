@@ -1,3 +1,6 @@
+
+# below here was added by .my_bash_function
+
 # find a file by its inum
 findi() {
         if [ $# -eq 0 ]
@@ -123,3 +126,5 @@ nmapv() {
                         nmap -sV --script vulners "$1"
         fi
 }
+
+# above here was added by .my_bash_function
