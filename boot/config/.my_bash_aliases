@@ -48,7 +48,7 @@ else
 fi
 
 alias feb='cal -m 02'
-netstat -nape --inet
+alias fgrep='fgrep --color=auto'
 alias findd='find . -type d -name'
 alias finddir='findd'
 alias findf='find . -type f -name'
