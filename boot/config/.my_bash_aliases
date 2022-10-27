@@ -46,6 +46,12 @@ else
 fi
 
 alias feb='cal -m 02'
+alias findd='find . -type d -name'
+alias finddir='findd'
+alias findf='find . -type f -name'
+alias findfile='findf'
+alias findi='find . -inum'
+alias findinum='findi'
 
 # invoke hardlink with personal settings
 if [[ "${PERSONAL_hardlink}" == "true" ]]
