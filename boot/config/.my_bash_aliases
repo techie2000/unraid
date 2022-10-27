@@ -2,13 +2,36 @@
 # below here was added by .my_bash_aliases
 
 # Personalisation
+PERSONAL_calendar=true
 PERSONAL_df=true
 PERSONAL_hardlink=true
 PERSONAL_ls=true
 
-alias apr='cal -m 04'
-alias aug='cal -m 08'
 alias cd..='cd ..' # Pickup and fix my common typo
+
+# View the calender by typing the first three letters of the month.
+# Optionally add the year as a parameter
+if [[ "${PERSONAL_calendar}" == "true" ]]
+  then
+        if isPackageInstalled cal
+                then
+                        alias jan='cal -m 01'
+                        alias feb='cal -m 02'
+                        alias mar='cal -m 03'
+                        alias apr='cal -m 04'
+                        alias may='cal -m 05'
+                        alias jun='cal -m 06'
+                        alias jul='cal -m 07'
+                        alias aug='cal -m 08'
+                        alias sep='cal -m 09'
+                        alias oct='cal -m 10'
+                        alias nov='cal -m 11'
+                        alias dec='cal -m 12'
+        else
+                echo "cal is not installed :( Consider installing it!"
+        fi
+fi
+
 alias chgrp='chgrp --preserve-root' # safety net
 alias chmod='chmod --preserve-root' # safety net
 alias chown='chown --preserve-root' # safety net
@@ -24,8 +47,6 @@ fi
 # pidstat flags
 # run continously every m seconds (for n times)
 alias cpu='pidstat 5'
-
-alias dec='cal -m 12'
 
 # df options:
 #   -h, --human-readable   : print sizes in powers of 1024 (e.g., 1023M)
@@ -53,8 +74,6 @@ if isPackageInstalled curl; then
 else
         echo "curl is not installed :( Consider installing it!"
 fi
-
-alias feb='cal -m 02'
 
 # fgrep option :
 #    --colo[u]r[=WHEN]     : use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'
@@ -89,8 +108,6 @@ alias infoProcessor='uname --processor'
 # -d m n = run continously every m seconds for n times
 # -t   = print the time of each report
 alias io='iostat -d 5 --human -t'
-
-alias jan='cal -m 01'
 
 # what's my local IP ?
 if isPackageInstalled curl; then
@@ -138,11 +155,6 @@ if [[ "${PERSONAL_ls}" == "true" ]]
     alias lspkgs='lsl --almost-all --color --human-readable --inode -l /var/log/packages/'
 fi
 
-alias mar='cal -m 03'
-alias may='cal -m 05'
-alias jul='cal -m 07'
-alias jun='cal -m 06'
-
 # invoke an alternative way to move files
 if isPackageInstalled rsync; then
         alias mv='rsync --archive --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
@@ -150,8 +162,6 @@ else
         echo "rsync is not installed :( Consider installing it!"
 fi
 
-alias nov='cal -m 11'
-alias oct='cal -m 10'
 alias publicip='externalip'
 
 # rm options:
@@ -187,7 +197,6 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 #   --stats                : give some file-transfer stats
 'rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs'
 
-alias sep='cal -m 09'
 alias showpkgs='lspkgs'
 
 # list top 20 cpu consuming  processes
