@@ -33,7 +33,7 @@ alias dec='cal -m 12'
 #   -T, --print-type       : print file system type
 if [[ "${PERSONAL_df}" == "true" ]]
   then
-        alias df='df -kh | grep '"'disk[^s]\|cache\|shm\|user0\|log'"
+        alias df='df -k --human-readable --print-type | grep '"'disk[^s]\|cache\|shm\|user0\|log'"
 fi
 
 # invoke a du alternative if it's installed
@@ -69,7 +69,7 @@ alias findinum='findi'
 
 # grep option :
 #    --colo[u]r[=WHEN]     : use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'
-alias grep='grep --color'
+alias grep='grep --color=auto'
 
 # invoke hardlink with personal settings
 if [[ "${PERSONAL_hardlink}" == "true" ]]
@@ -116,10 +116,10 @@ fi
 #                             if STYLE is prefixed with 'posix-', STYLE takes effect only outside the POSIX locale
 if [[ "${PERSONAL_ls}" == "true" ]]
   then
-        alias ls='ls --almost-all --color --human-readable'
-        alias lst='ls --almost-all --color --human-readable --reverse -t'
-        alias lsl='ls --almost-all --color --human-readable --inode -l'
-        alias lslt='ls --almost-all --color --human-readable --inode -l --reverse -t'
+        alias ls='ls --almost-all --color=always'
+        alias lst='ls --almost-all --color=always --human-readable --reverse -t'
+        alias lsl='ls --almost-all --classify --color=always --human-readable --inode -l --time-style=full-iso'
+        alias lslt='ls --almost-all --classify --color=always --human-readable --inode -l --reverse -t --time-style=full-iso'
 fi
 
 # list what node modules are installed on the system
@@ -164,7 +164,7 @@ alias publicip='externalip'
 #   --interactive[=WHEN]  : prompt according to WHEN: never, once (-I), or always (-i); without WHEN, prompt always
 #   --preserve-root       : do not remove '/' (default)
 #   --verbose explain what is being done
-alias rm='rm --preserve-root' # safety net
+alias rm='rm --recursive --force --interactive=once --preserve-root' # safety net
 
 # rsync options:
 #   -a, --archive          : archive mode; equals -rlptgoD (no -H,-A,-X)
