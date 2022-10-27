@@ -12,6 +12,7 @@ alias cd..='cd ..' # Pickup and fix my common typo
 alias chgrp='chgrp --preserve-root' # safety net
 alias chmod='chmod --preserve-root' # safety net
 alias chown='chown --preserve-root' # safety net
+alias cls='clear' # For when I get confused with Windows/DOS!
 
 # invoke an alternative way to copy files
 if isPackageInstalled rsync; then
