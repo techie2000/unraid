@@ -8,6 +8,7 @@ PERSONAL_ls=true
 
 alias apr='cal -m 04'
 alias aug='cal -m 08'
+alias cd..='cd ..' # Pickup and fix my common typo
 alias chgrp='chgrp --preserve-root' # safety net
 alias chmod='chmod --preserve-root' # safety net
 alias chown='chown --preserve-root' # safety net
@@ -140,6 +141,10 @@ alias showpkgs='lspkgs'
 
 # list top 20 cpu consuming  processes
 alias topcpu='ps aux --sort=-pcpu | head -20'
+
+alias   up='cd ..'
+alias  up2='cd ../..'
+alias  up3='cd ../../..'
 
 # who is on my network
 if isPackageInstalled nmap; then
