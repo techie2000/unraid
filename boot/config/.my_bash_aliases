@@ -14,7 +14,7 @@ alias chown='chown --preserve-root' # safety net
 
 # invoke an alternative way to copy files
 if isPackageInstalled rsync; then
-        alias cp='rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs'
+        alias cp='rsync'
 else
         echo "rsync is not installed :( Consider installing it!"
 fi
@@ -134,6 +134,7 @@ alias nov='cal -m 11'
 alias oct='cal -m 10'
 alias publicip='externalip'
 alias rm='rm --preserve-root' # safety net
+'rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs'
 alias sep='cal -m 09'
 alias showpkgs='lspkgs'
 
