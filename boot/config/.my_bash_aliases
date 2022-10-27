@@ -27,7 +27,10 @@ alias cpu='pidstat 5'
 
 alias dec='cal -m 12'
 
-# invoke df with personal settings
+# df options:
+#   -h, --human-readable   : print sizes in powers of 1024 (e.g., 1023M)
+#   -k                     : like --block-size=1K
+#   -T, --print-type       : print file system type
 if [[ "${PERSONAL_df}" == "true" ]]
   then
         alias df='df -kh | grep '"'disk[^s]\|cache\|shm\|user0\|log'"
@@ -40,6 +43,8 @@ else
         echo "ncdu is not installed :( Consider installing it!"
 fi
 
+# egrep option :
+#    --colo[u]r[=WHEN]     : use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'
 alias egrep='egrep --color=auto'
 
 # what's my external facing IP ?
@@ -50,13 +55,20 @@ else
 fi
 
 alias feb='cal -m 02'
+
+# fgrep option :
+#    --colo[u]r[=WHEN]     : use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'
 alias fgrep='fgrep --color=auto'
+
 alias findd='find . -type d -name'
 alias finddir='findd'
 alias findf='find . -type f -name'
 alias findfile='findf'
 alias findi='find . -inum'
 alias findinum='findi'
+
+# grep option :
+#    --colo[u]r[=WHEN]     : use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'
 alias grep='grep --color'
 
 # invoke hardlink with personal settings
@@ -88,14 +100,20 @@ else
 fi
 
 # invoke ls with personal settings
-# ls flags :
-#   --almost-all           do not list implied . and ..
-#   --color[=WHEN]         color the output WHEN
-#   --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
-#   --inode                print the index number of each file
-#   -l                     use a long listing format
-#   --reverse              reverse order while sorting
-#   -t                     sort by time, newest first
+# ls options :
+#   -F, --classify         : append indicator (one of */=>@|) to entries
+#   -l                     : use a long listing format
+#   -t                     : sort by modification time, newest first
+#   --almost-all           : do not list implied . and ..
+#   --color[=WHEN]         : colorize the output; WHEN can be 'never', 'auto', or 'always'
+#   --human-readable       : with -l, print sizes in human readable format (e.g., 1K 234M 2G)
+#   --indicator-style=WORD : append indicator with style WORD to entry names: none, slash (-p), file-type (--file-type), classify (-F)
+#   --inode                : print the index number of each file
+#   --reverse              : reverse order while sorting
+#   --time-style=STYLE     : with -l, show times using style STYLE: full-iso, long-iso, iso, locale, or +FORMAT;
+#                             FORMAT is interpreted like in 'date';
+#                             if FORMAT is FORMAT1<newline>FORMAT2, then FORMAT1 applies to non-recent files and FORMAT2 to recent files;
+#                             if STYLE is prefixed with 'posix-', STYLE takes effect only outside the POSIX locale
 if [[ "${PERSONAL_ls}" == "true" ]]
   then
         alias ls='ls --almost-all --color --human-readable'
@@ -135,8 +153,40 @@ fi
 alias nov='cal -m 11'
 alias oct='cal -m 10'
 alias publicip='externalip'
+
+# rm options:
+#    -f, --force          : ignore nonexistent files and arguments, never prompt
+#    -i                   : prompt before every removal
+#    -I                   : prompt once before removing more than three files, or
+#                             when removing recursively; less intrusive than -i,
+#                             while still giving protection against most mistakes
+#   -r, -R, --recursive   : remove directories and their contents recursively
+#   --interactive[=WHEN]  : prompt according to WHEN: never, once (-I), or always (-i); without WHEN, prompt always
+#   --preserve-root       : do not remove '/' (default)
+#   --verbose explain what is being done
 alias rm='rm --preserve-root' # safety net
+
+# rsync options:
+#   -a, --archive          : archive mode; equals -rlptgoD (no -H,-A,-X)
+#   -A, --acls             : preserve ACLs (implies --perms)
+#   -g, --group            : preserve group
+#   -h, --human-readable   : output numbers in a human-readable format
+#   -H, --hard-links       : preserve hard links
+#   -l, --links            : copy symlinks as symlinks
+#   -o, --owner            : preserve owner (super-user only)
+#   -p, --perms            : preserve permissions
+#   -r, --recursive        : recurse into directories
+#   -t, --times            : preserve modification times
+#   -v, --verbose          : increase verbosity
+#   -X, --xattrs           : preserve extended attributes
+#   --info=FLAGS           : fine-grained informational verbosity
+#   --noatime              : do not alter atime when opening source files
+#   --open-noatime         : the new version of --noatime Which to use depends on which flavour of rsync you have
+#   --progress             : show progress during transfer
+#   --remove-source-files  : sender removes synchronized files (non-dirs)
+#   --stats                : give some file-transfer stats
 'rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs'
+
 alias sep='cal -m 09'
 alias showpkgs='lspkgs'
 
