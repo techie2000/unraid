@@ -191,11 +191,11 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 #   -X, --xattrs           : preserve extended attributes
 #   --info=FLAGS           : fine-grained informational verbosity
 #   --noatime              : do not alter atime when opening source files
-#   --open-noatime         : the new version of --noatime Which to use depends on which flavour of rsync you have
+#   --open-noatime         : the new version of --noatime (Which to use depends on which flavour of rsync you have)
 #   --progress             : show progress during transfer
 #   --remove-source-files  : sender removes synchronized files (non-dirs)
 #   --stats                : give some file-transfer stats
-'rsync --archive --hard-links --human-readable --info=progress2 --noatime --stats --times --verbose --xattrs'
+'rsync --archive --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
 
 alias showpkgs='lspkgs'
 
