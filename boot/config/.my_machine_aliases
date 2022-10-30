@@ -11,7 +11,7 @@ alias cdtvshows=cdtv
 alias cdweb='cd /mnt/user/wenshows/share'
 
 alias hardlinkmedia='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose --include ".*\.(avi|flac|gif|jpe?g|m[ok]v|mp[3-4]|png|tiff)$"' 
-alias hardlinkmediadryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose --dry-run --include ":q!"' 
+alias hardlinkmediadryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose --dry-run --include ".*\.(avi|flac|gif|jpe?g|m[ok]v|mp[3-4]|png|tiff)$"'
 
 alias locatedl='updatedb -U /mnt/user/downloads -o /mnt/user/downloads/locate_downloads.db; locate -d /mnt/user/downloads/locate_downloads.db'
 alias locatefilm='updatedb -U /mnt/user/Films -o /mnt/user/Films/locate_films.db; locate -d /mnt/user/Films/locate_films.db'
