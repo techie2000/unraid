@@ -1,5 +1,7 @@
 
-# above here was added by .my_bashrc
+# below here was added by .my_bashrc
+
+# .bashrc and gets executed every time a user starts up a fresh terminal session in interactive mode.
 
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
