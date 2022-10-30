@@ -1,4 +1,7 @@
 
 # below here was added by .my_machine_aliases
 
+alias hardlinkmedia='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose --include ".*\.(avi|flac|gif|jpe?g|m[ok]v|mp[3-4]|png|tiff)$"' 
+alias hardlinkmediadryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose --dry-run --include ".*\.(avi|flac|gif|jpe?g|m[ok]v|mp[3-4]|png|tiff)$"' 
+
 # above here was added by .my_machine_aliases
