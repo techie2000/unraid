@@ -106,11 +106,13 @@ alias h='hist'
 alias hist='history'
 
 alias infoArchitecture='uname --machine'
+alias infoCpu='infoProcessor'
 alias infoHost='infoArchitecture; infoProcessor; infoKernelName; infoKernelRelease'
 alias infoKernel='infoKernelName; infoKernelRelease'
 alias infoKernelName='uname --kernel-name'
 alias infoKernelRelease='uname --kernel-release'
 alias infoProcessor='uname --processor'
+alias infoProcessorDetailed='lscpu'
 
 # iostat flags
 # -d m n = run continously every m seconds for n times
