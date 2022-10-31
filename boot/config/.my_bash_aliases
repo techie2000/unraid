@@ -166,6 +166,8 @@ fi
 #    -v, --verbose     print a message for each created directory
 alias mkdir='mkdir parents --verbose' 
 
+mount='mount |column -t' # Make mount readable!
+
 # invoke an alternative (and safe) way to move files
 if isPackageInstalled rsync; then
         alias mv='rsync --archive --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
