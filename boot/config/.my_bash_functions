@@ -3,7 +3,7 @@
 
 # cd into a directory and list it's contents
 cdl() {
-        cd "$@" || exit; lsl; 
+        cd "$@" || return; lsl; 
 }
 
 # find a file by its inum
