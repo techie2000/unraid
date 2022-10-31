@@ -6,6 +6,15 @@
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+    xterm*|rxvt*|screen*)    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'    ;;
+esac
+
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 #--------------------colours---------------------------
 norm='\[\033[m\]'
 bold='\[\033[1m\]'
