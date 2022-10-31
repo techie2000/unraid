@@ -93,6 +93,9 @@ alias findfile='findf'
 alias findi='find . -inum'
 alias findinum='findi'
 
+alias gits='git status'
+alias gs='gits'
+
 # grep option :
 #    --colo[u]r[=WHEN]     : use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'
 alias grep='grep --color=auto'
