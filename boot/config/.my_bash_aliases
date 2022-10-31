@@ -7,6 +7,7 @@ PERSONAL_df=true
 PERSONAL_hardlink=true
 PERSONAL_ls=true
 
+alias   ..='cd ..'
 alias cd..='cd ..' # Pickup and fix my common typo
 
 # View the calender by typing the first three letters of the month.
