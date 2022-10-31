@@ -1,1 +1,34 @@
 
+# below here was added by .my_bash_profile
+
+# When we launch the “interactive login” terminal, the first file it searches for is “/etc/profile,” 
+# The “/etc/profile” file sets up the environment for all users.
+# 
+# After that, it searches for other files and executes the command from the file it finds first. 
+# 
+# “.bash_profile” sets up the current shell’s environment. 
+# If “.bash_profile” is not present, then it will look for “.bash_login” or “.profile” files. 
+# 
+# Upon launching the “interactive non-login” terminal, the only file read is “.bashrc”
+# Most distributions have “.profile” in the place of “.bash_profile”; all shells read the former while the latter is only read by the bash shell.
+# 
+# The “.bash_profile” file is responsible for setting up the environment using environment variables that store information about text editor, layout settings, etc. 
+# It executes only once when you log in to your machine. 
+# Whereas “.bashrc” contains commands, aliases, bash functions and runs when you open the terminal to an already logged-in system.
+
+# console coloring for kool kids
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# if this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# impersonate a user
+alias user="su -ls /bin/bash"
+
+# above here was added by .my_bash_profile
