@@ -192,7 +192,13 @@ fi
 #    -v, --verbose     print a message for each created directory
 alias mkdir='mkdir parents --verbose' 
 
-mount='mount|sort|column -t|ccze -A' # Make mount readable!
+if isPackageInstalled ccze
+  then
+    alias mount='mount|sort|column -t|ccze -A' # Make mount readable!
+  else
+    alias mount='mount|sort|column -t' # Make mount readable!
+    echo "ccze is not installed :( Consider installing it!"
+fi
 
 # invoke an alternative (and safe) way to move files
 if isPackageInstalled rsync; then
