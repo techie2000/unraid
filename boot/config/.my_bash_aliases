@@ -118,6 +118,20 @@ alias infoKernelRelease='uname --kernel-release'
 alias infoProcessor='uname --processor'
 alias infoProcessorDetailed='lscpu'
 
+case $(infoDistro) in
+    Slackware* )
+        alias installpkg='upgradepkg --install-new' ;;
+    Fedora* )
+        alias installpkg='sudo yum install ' ;;
+        alias update='yum -y update' ;;
+    Debian* )
+        alias installpkg='sudo apt-get --yes' ;;
+        alias update='sudo apt-get update && sudo apt-get upgrade' ;;
+    Ubuntu* )
+        alias installpkg='sudo apt-get --yes' ;;
+        alias update='sudo apt-get update && sudo apt-get upgrade' ;;
+esac
+
 # iostat flags
 # -d m n = run continously every m seconds for n times
 # -t   = print the time of each report
