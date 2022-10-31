@@ -1,6 +1,11 @@
 
 # below here was added by .my_bash_function
 
+# cd into a directory and list it's contents
+cdl() {
+        cd "$@"; lsl; 
+}
+
 # find a file by its inum
 findi() {
         if [ $# -eq 0 ]
