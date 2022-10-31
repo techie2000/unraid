@@ -102,6 +102,9 @@ if [[ "${PERSONAL_hardlink}" == "true" ]]
         alias hardlinkdryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --dry-run --verbose'
 fi
 
+alias h='hist'
+alias hist='history'
+
 alias infoArchitecture='uname --machine'
 alias infoHost='infoArchitecture; infoProcessor; infoKernelName; infoKernelRelease'
 alias infoKernel='infoKernelName; infoKernelRelease'
