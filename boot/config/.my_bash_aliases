@@ -239,6 +239,8 @@ alias su='sudo -i'
 alias topcpu='ps auxf | sort -nr -k 3 | head -10'  # list top 10 cpu consuming processes
 alias topmem='ps auxf | sort -nr -k 4 | head -10'  # list top 10 memory consuming processes
 
+alias watchtail=’watch -n .5 tail -n 20′
+
 # wget options:
 #   -c,  --continue        : resume getting a partially-downloaded file
 #        --show-progress   : display the progress bar in any verbosity mode
