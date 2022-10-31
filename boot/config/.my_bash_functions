@@ -127,4 +127,17 @@ nmapv() {
         fi
 }
 
+# cd 'up' n levels
+up () {
+        COUNTER=$1
+        while [[ $COUNTER -gt 0 ]]
+                do
+                UP="${UP}../"
+                COUNTER=$(( $COUNTER -1 ))
+        done
+        echo "cd $UP"
+        cd $UP
+        UP=''
+}
+
 # above here was added by .my_bash_function
