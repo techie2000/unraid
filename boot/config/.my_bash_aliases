@@ -219,10 +219,6 @@ alias showpkgs='lspkgs'
 alias topcpu='ps auxf | sort -nr -k 3 | head -10'  # list top 10 cpu consuming  processes
 alias topmem='ps auxf | sort -nr -k 4 | head -10'  # list top 10 memory consuming  processes
 
-alias   up='cd ..'
-alias  up2='cd ../..'
-alias  up3='cd ../../..'
-
 # wget options:
 #   -c,  --continue        : resume getting a partially-downloaded file
 #        --show-progress   : display the progress bar in any verbosity mode
