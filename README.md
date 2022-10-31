@@ -1,7 +1,7 @@
 # UnRaid
 Sharing some of my UnRaid settings
 
-I currently run "Version: 6.10.3"... I can't vouch that these will work on older/nerwer versions of UnRaid
+I currently run "Version: 6.11.1"... I can't vouch that these will work on older/nerwer versions of UnRaid
 ... use them blindly at your own risk.
 
 Also, they are MY preferences....my preferences may not suit your needs
