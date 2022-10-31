@@ -241,7 +241,7 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 #   --progress             : show progress during transfer
 #   --remove-source-files  : sender removes synchronized files (non-dirs)
 #   --stats                : give some file-transfer stats
-'rsync --archive --compress --hard-links --human-readable --info=progress2 --open-noatime --recursive --stats --times --verbose --xattrs'
+alias rsync='rsync --archive --compress --hard-links --human-readable --info=progress2 --open-noatime --recursive --stats --times --verbose --xattrs'
 
 alias spacehogs='du -hsx * | sort -rh | head -10'  # list top 10 diskspace consumers
 alias showpkgs='lspkgs'
