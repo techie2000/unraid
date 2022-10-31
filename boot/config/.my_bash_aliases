@@ -121,14 +121,11 @@ alias infoProcessorDetailed='lscpu'
 case $(infoDistro) in
     Slackware* )
         alias installpkg='upgradepkg --install-new' ;;
-    Fedora* )
-        alias installpkg='sudo yum install ' ;;
+    CentOS*|Fedora*|RedHatEnterpriseServer* )
+        alias installpkg='sudo yum install' 
         alias update='yum -y update' ;;
-    Debian* )
-        alias installpkg='sudo apt-get --yes' ;;
-        alias update='sudo apt-get update && sudo apt-get upgrade' ;;
-    Ubuntu* )
-        alias installpkg='sudo apt-get --yes' ;;
+    Ubuntu*|Debian*|Raspbian* )
+        alias installpkg='sudo apt-get --yes' 
         alias update='sudo apt-get update && sudo apt-get upgrade' ;;
 esac
 
