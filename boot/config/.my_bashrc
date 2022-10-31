@@ -17,6 +17,9 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 shopt -s histappend
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
