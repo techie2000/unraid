@@ -106,6 +106,8 @@ fi
 
 alias h='hist'
 alias hist='history'
+alias hg='histg'
+alias histg='history|grep '
 
 alias infoArchitecture='uname --machine'
 alias infoCpu='infoProcessor'
