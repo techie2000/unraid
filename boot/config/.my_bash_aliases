@@ -48,6 +48,11 @@ fi
 # run continously every m seconds (for n times)
 alias cpu='pidstat 5'
 
+# diff options:
+#   -y, --side-by-side     :  output in two columns
+#       --color[=WHEN]     :  color output; WHEN is 'never', 'always', or 'auto'
+diff='diff --color --side-by-side' 
+
 # df options:
 #   -h, --human-readable   : print sizes in powers of 1024 (e.g., 1023M)
 #   -k                     : like --block-size=1K
