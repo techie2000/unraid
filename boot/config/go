@@ -24,3 +24,5 @@ cat /boot/config/.my_bash_profile >> ~/.bash_profile
 cat /boot/config/.my_machine_aliases >> ~/.bash_aliases
 cat /boot/config/.my_machine_functions >> ~/.bash_functions
 
+# invoke the above
+source ~/.bashrc
