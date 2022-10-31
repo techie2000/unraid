@@ -222,6 +222,11 @@ alias   up='cd ..'
 alias  up2='cd ../..'
 alias  up3='cd ../../..'
 
+# wget options:
+#   -c,  --continue        : resume getting a partially-downloaded file
+#        --show-progress   : display the progress bar in any verbosity mode
+alias wget='wget --continue --show-progress'
+
 # who is on my network
 if isPackageInstalled nmap; then
         alias whosonmynetwork='nmap -sP 192.168.0.0/24'
