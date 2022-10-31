@@ -3,7 +3,7 @@
 
 # cd into a directory and list it's contents
 cdl() {
-        cd "$@"; lsl; 
+        cd "$@" || exit; lsl; 
 }
 
 # find a file by its inum
@@ -25,6 +25,26 @@ findn() {
                         find . -iname "$1"
         fi
 }
+
+infoDistro() {
+        if [[ $(uname --kernel-name) != 'Linux' ]]
+                then 
+                        retval='unknown'
+                else
+                        if [ -n "$(command -v lsb_release)" ]; then
+                                retval="$(lsb_release -s -d)"
+                        elif [ -f "/etc/os-release" ]; then
+                                retval="$(grep PRETTY_NAME /etc/os-release | sed 's/PRETTY_NAME=//g' | tr -d '="')"
+                        elif [ -f "/etc/debian_version" ]; then
+                                retval="Debian $(cat /etc/debian_version)"
+                        elif [ -f "/etc/redhat-release" ]; then
+                                retval="$(cat /etc/redhat-release)"
+                        else
+                                retval="$(uname -s) $(uname -r)"
+                        fi
+        fi
+echo "$retval"
+}        
 
 # identify the vendor for a given mac
 infoMacVendor() {
@@ -138,10 +158,10 @@ up () {
         while [[ $COUNTER -gt 0 ]]
                 do
                 UP="${UP}../"
-                COUNTER=$(( $COUNTER -1 ))
+                COUNTER=$(( COUNTER -1 ))
         done
         echo "cd $UP"
-        cd $UP
+        cd "$UP" || exit
         UP=''
 }
 
