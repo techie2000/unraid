@@ -12,9 +12,10 @@
 # Upon launching the “interactive non-login” terminal, the only file read is “.bashrc”
 # Most distributions have “.profile” in the place of “.bash_profile”; all shells read the former while the latter is only read by the bash shell.
 # 
+# The “.bash_profile” will be executed when you log in to your machine to configure your shell environment, 
 # The “.bash_profile” file is responsible for setting up the environment using environment variables that store information about text editor, layout settings, etc. 
 # It executes only once when you log in to your machine. 
-# Whereas “.bashrc” contains commands, aliases, bash functions and runs when you open the terminal to an already logged-in system.
+# Whereas “.bashrc” contains commands, aliases, bash functions and runs when you open the terminal and also executes when you open a new instance of the terminal.
 
 # console coloring for kool kids
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
