@@ -155,7 +155,13 @@ if [[ "${PERSONAL_ls}" == "true" ]]
     alias lspkgs='lsl --almost-all --color --human-readable --inode -l /var/log/packages/'
 fi
 
-# invoke an alternative way to move files
+# mkdir options:
+#    -p, --parents     no error if existing, make parent directories as needed,
+#                      with their file modes unaffected by any -m option.
+#    -v, --verbose     print a message for each created directory
+alias mkdir='mkdir parents --verbose' 
+
+# invoke an alternative (and safe) way to move files
 if isPackageInstalled rsync; then
         alias mv='rsync --archive --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
 else
