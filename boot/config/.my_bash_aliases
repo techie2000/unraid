@@ -67,7 +67,9 @@ if isPackageInstalled ncdu; then
         alias du='ncdu' 
 else
         echo "ncdu is not installed :( Consider installing it!"
+        alias du='du -ch | grep total'
 fi
+alias dut='df -hl --total | grep total' # total disk usage
 
 # egrep option :
 #    --colo[u]r[=WHEN]     : use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'
@@ -215,9 +217,10 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 #   --stats                : give some file-transfer stats
 'rsync --archive --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
 
+alias spacehogs='du -hsx * | sort -rh | head -10'  # list top 10 diskspace consumers
 alias showpkgs='lspkgs'
-alias topcpu='ps auxf | sort -nr -k 3 | head -10'  # list top 10 cpu consuming  processes
-alias topmem='ps auxf | sort -nr -k 4 | head -10'  # list top 10 memory consuming  processes
+alias topcpu='ps auxf | sort -nr -k 3 | head -10'  # list top 10 cpu consuming processes
+alias topmem='ps auxf | sort -nr -k 4 | head -10'  # list top 10 memory consuming processes
 
 # wget options:
 #   -c,  --continue        : resume getting a partially-downloaded file
