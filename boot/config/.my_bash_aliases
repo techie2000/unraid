@@ -196,7 +196,7 @@ mount='mount |column -t' # Make mount readable!
 
 # invoke an alternative (and safe) way to move files
 if isPackageInstalled rsync; then
-        alias mv='rsync --archive --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
+        alias mv='rsync --archive --compress --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
 else
         echo "rsync is not installed :( Consider installing it!"
 fi
@@ -228,13 +228,14 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 #   -t, --times            : preserve modification times
 #   -v, --verbose          : increase verbosity
 #   -X, --xattrs           : preserve extended attributes
+#   -z, --compress         : compress file data during the transfer
 #   --info=FLAGS           : fine-grained informational verbosity
 #   --noatime              : do not alter atime when opening source files
 #   --open-noatime         : the new version of --noatime (Which to use depends on which flavour of rsync you have)
 #   --progress             : show progress during transfer
 #   --remove-source-files  : sender removes synchronized files (non-dirs)
 #   --stats                : give some file-transfer stats
-'rsync --archive --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
+'rsync --archive --compress --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
 
 alias spacehogs='du -hsx * | sort -rh | head -10'  # list top 10 diskspace consumers
 alias showpkgs='lspkgs'
