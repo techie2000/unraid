@@ -214,9 +214,8 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 'rsync --archive --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
 
 alias showpkgs='lspkgs'
-
-# list top 20 cpu consuming  processes
-alias topcpu='ps aux --sort=-pcpu | head -20'
+alias topcpu='ps auxf | sort -nr -k 3 | head -10'  # list top 10 cpu consuming  processes
+alias topmem='ps auxf | sort -nr -k 4 | head -10'  # list top 10 memory consuming  processes
 
 alias   up='cd ..'
 alias  up2='cd ../..'
