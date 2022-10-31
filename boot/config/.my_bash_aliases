@@ -7,6 +7,8 @@ PERSONAL_df=true
 PERSONAL_hardlink=true
 PERSONAL_ls=true
 
+alias bzip='bzip2 --keep'
+
 alias   ..='cd ..'
 alias cd..='cd ..' # Pickup and fix my common typo
 
