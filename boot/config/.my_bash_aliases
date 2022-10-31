@@ -54,7 +54,7 @@ alias cpu='pidstat 5'
 # diff options:
 #   -y, --side-by-side     :  output in two columns
 #       --color[=WHEN]     :  color output; WHEN is 'never', 'always', or 'auto'
-diff='diff --color --side-by-side' 
+alias diff='diff --color --side-by-side' 
 
 # df options:
 #   -h, --human-readable   : print sizes in powers of 1024 (e.g., 1023M)
@@ -249,7 +249,7 @@ alias su='sudo -i'
 alias topcpu='ps auxf | sort -nr -k 3 | head -10'  # list top 10 cpu consuming processes
 alias topmem='ps auxf | sort -nr -k 4 | head -10'  # list top 10 memory consuming processes
 
-alias watchtail=’watch -n .5 tail -n 20′
+alias watchtail='watch -n .5 tail -n 20'
 
 # wget options:
 #   -c,  --continue        : resume getting a partially-downloaded file
