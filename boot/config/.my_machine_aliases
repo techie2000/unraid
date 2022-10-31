@@ -19,4 +19,6 @@ alias locatetv='updatedb -U /mnt/user/tvshows -o /mnt/user/tvshows/locate_tv.db;
 
 alias lsm="lsl | egrep '.*\.\(avi|flac|gif|jpe?g|m[ok]v|mp[3-4]|png|tiff\)$'"
 
+alias syslog="tail -20f /var/log/syslog"
+
 # above here was added by .my_machine_aliases
