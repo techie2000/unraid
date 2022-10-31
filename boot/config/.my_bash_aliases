@@ -192,7 +192,7 @@ fi
 #    -v, --verbose     print a message for each created directory
 alias mkdir='mkdir parents --verbose' 
 
-mount='mount |column -t' # Make mount readable!
+mount='mount|sort|column -t|ccze -A' # Make mount readable!
 
 # invoke an alternative (and safe) way to move files
 if isPackageInstalled rsync; then
