@@ -3,166 +3,170 @@
 
 # cd into a directory and list it's contents
 cdl() {
-        cd "$@" || return; lsl; 
+    cd "$@" || return; lsl;
 }
 
 # find a file by its inum
 findi() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply an inum"
-                else
-                        find . -inum "$1"
-        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply an inum"
+    else
+        find . -inum "$1"
+    fi
 }
 
 # find a file by its name
 findn() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply (part of) a filename"
-                else
-                        find . -iname "$1"
-        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply (part of) a filename"
+    else
+        find . -iname "$1"
+    fi
 }
 
 infoDistro() {
-        if [[ $(uname --kernel-name) != 'Linux' ]]
-                then 
-                        retval='unknown'
-                else
-                        if [ -n "$(command -v lsb_release)" ]; then
-                                retval="$(lsb_release -s -d)"
-                        elif [ -f "/etc/os-release" ]; then
-                                retval="$(grep PRETTY_NAME /etc/os-release | sed 's/PRETTY_NAME=//g' | tr -d '="')"
-                        elif [ -f "/etc/debian_version" ]; then
-                                retval="Debian $(cat /etc/debian_version)"
-                        elif [ -f "/etc/redhat-release" ]; then
-                                retval="$(cat /etc/redhat-release)"
-                        else
-                                retval="$(uname -s) $(uname -r)"
-                        fi
+    if [[ $(uname --kernel-name) != 'Linux' ]]
+    then
+        retval='unknown'
+    else
+        if [ -n "$(command -v lsb_release)" ]
+        then
+            retval="$(lsb_release -s -d)"
+        elif [ -f "/etc/os-release" ]
+        then
+            retval="$(grep PRETTY_NAME /etc/os-release | sed 's/PRETTY_NAME=//g' | tr -d '="')"
+        elif [ -f "/etc/debian_version" ]
+        then
+            retval="Debian $(cat /etc/debian_version)"
+        elif [ -f "/etc/redhat-release" ]
+        then
+            retval="$(cat /etc/redhat-release)"
+        else
+            retval="$(uname -s) $(uname -r)"
         fi
-echo "$retval"
-}        
+    fi
+    echo "$retval"
+}
 
 # identify the vendor for a given mac
 infoMacVendor() {
-         if [ $# -eq 0 ]
-                 then
-                         echo "Please supply a valid mac address"
-                 else
-                         if [[ "$1" =~ ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}\\.[0-9a-fA-F]{4}\\.[0-9a-fA-F]{4})$ ]]
-                                 then
-                                        curl http://api.macvendors.com/"$1"
-                                 else
-                                        echo "$1 is an invalid MAC address"
-                         fi
-          fi
- }
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply a valid mac address"
+    else
+        if [[ "$1" =~ ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}\\.[0-9a-fA-F]{4}\\.[0-9a-fA-F]{4})$ ]]
+        then
+            curl http://api.macvendors.com/"$1"
+        else
+            echo "$1 is an invalid MAC address"
+        fi
+    fi
+}
 
 #check directory exists
 isDirectoryAvailable() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply a directory name to check its existence"
-                else
-                        if [ -d "$1" ]
-                                then
-                                        true
-                                else
-                                        false
-                        fi
-       fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply a directory name to check its existence"
+    else
+        if [ -d "$1" ]
+        then
+            true
+        else
+            false
+        fi
+    fi
 }
 
 #check file exists
 isFileAvailable() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply a filename to check its existence"
-                else
-                        if [ -f "$1" ]
-                                then
-                                        true
-                                else
-                                        false
-                        fi
-       fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply a filename to check its existence"
+    else
+        if [ -f "$1" ]
+        then
+            true
+        else
+            false
+        fi
+    fi
 }
 
 # check if string is a number
 isNum() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply a string in order to determine if it's a number"
-                else
-                        if isnum "$1"
-                                then
-                                       true
-                                else
-                                       false
-                        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply a string in order to determine if it's a number"
+    else
+        if isnum "$1"
+        then
+            true
+        else
+            false
         fi
+    fi
 }
 
 # check if a package is installed
 isPackageInstalled () {
-        type "$1" &> /dev/null ;
+    type "$1" &> /dev/null
 }
 
-# Detect OS and Services	
+# Detect OS and Services
 nmapos() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply an ip address or servername"
-                else
-                        nmap -A "$1"
-        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply an ip address or servername"
+    else
+        nmap -A "$1"
+    fi
 }
 
-# Detect OS and Services (More aggressive Service Detection)	
+# Detect OS and Services (More aggressive Service Detection)
 nmapos2() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply an ip address or servername"
-                else
-                        nmap -sV --version-intensity 5 "$1"
-        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply an ip address or servername"
+    else
+        nmap -sV --version-intensity 5 "$1"
+    fi
 }
 
 # Detect OS and Services (Digging deeper with NSE Scripts)
 # Scan using default safe scripts
 nmapos3() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply an ip address or servername"
-                else
-                        nmap -sV -sC "$1"
-        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply an ip address or servername"
+    else
+        nmap -sV -sC "$1"
+    fi
 }
 
 # Scan for vulnerabilities
 nmapv() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply an ip address or servername"
-                else
-                        nmap -sV --script vulners "$1"
-        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply an ip address or servername"
+    else
+        nmap -sV --script vulners "$1"
+    fi
 }
 
 # cd 'up' n levels
 up () {
-        COUNTER=$1
-        while [[ $COUNTER -gt 0 ]]
-                do
-                UP="${UP}../"
-                COUNTER=$(( COUNTER -1 ))
-        done
-        echo "cd $UP"
-        cd "$UP" || exit
-        UP=''
+    COUNTER=$1
+    while [[ $COUNTER -gt 0 ]]
+    do
+        UP="${UP}../"
+        COUNTER=$(( COUNTER -1 ))
+    done
+    echo "cd $UP"
+    cd "$UP" || exit
+    UP=''
 }
 
 # above here was added by .my_bash_function
