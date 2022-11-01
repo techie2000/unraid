@@ -15,24 +15,24 @@ alias cd..='cd ..' # Pickup and fix my common typo
 # View the calender by typing the first three letters of the month.
 # Optionally add the year as a parameter
 if [[ "${PERSONAL_calendar}" == "true" ]]
-  then
-        if isPackageInstalled cal
-                then
-                        alias jan='cal -m 01'
-                        alias feb='cal -m 02'
-                        alias mar='cal -m 03'
-                        alias apr='cal -m 04'
-                        alias may='cal -m 05'
-                        alias jun='cal -m 06'
-                        alias jul='cal -m 07'
-                        alias aug='cal -m 08'
-                        alias sep='cal -m 09'
-                        alias oct='cal -m 10'
-                        alias nov='cal -m 11'
-                        alias dec='cal -m 12'
-        else
-                echo "cal is not installed :( Consider installing it!"
-        fi
+then
+    if isPackageInstalled cal
+    then
+        alias jan='cal -m 01'
+        alias feb='cal -m 02'
+        alias mar='cal -m 03'
+        alias apr='cal -m 04'
+        alias may='cal -m 05'
+        alias jun='cal -m 06'
+        alias jul='cal -m 07'
+        alias aug='cal -m 08'
+        alias sep='cal -m 09'
+        alias oct='cal -m 10'
+        alias nov='cal -m 11'
+        alias dec='cal -m 12'
+    else
+        echo "cal is not installed :( Consider installing it!"
+    fi
 fi
 
 alias chgrp='chgrp --preserve-root' # safety net
@@ -42,9 +42,9 @@ alias cls='clear' # For when I get confused with Windows/DOS!
 
 # invoke an alternative way to copy files
 if isPackageInstalled rsync; then
-        alias cp='rsync'
+    alias cp='rsync'
 else
-        echo "rsync is not installed :( Consider installing it!"
+    echo "rsync is not installed :( Consider installing it!"
 fi
 
 # pidstat flags
@@ -54,23 +54,24 @@ alias cpu='pidstat 5'
 # diff options:
 #   -y, --side-by-side     :  output in two columns
 #       --color[=WHEN]     :  color output; WHEN is 'never', 'always', or 'auto'
-alias diff='diff --color --side-by-side' 
+alias diff='diff --color --side-by-side'
 
 # df options:
 #   -h, --human-readable   : print sizes in powers of 1024 (e.g., 1023M)
 #   -k                     : like --block-size=1K
 #   -T, --print-type       : print file system type
 if [[ "${PERSONAL_df}" == "true" ]]
-  then
-        alias df='df -k --human-readable --print-type | grep '"'disk[^s]\|cache\|shm\|user0\|log'"
+then
+    alias df='df -k --human-readable --print-type | grep '"'disk[^s]\|cache\|shm\|user0\|log'"
 fi
 
 # invoke a du alternative if it's installed
-if isPackageInstalled ncdu; then
-        alias du='ncdu' 
+if isPackageInstalled ncdu
+then
+    alias du='ncdu'
 else
-        echo "ncdu is not installed :( Consider installing it!"
-        alias du='du -ch | grep total'
+    echo "ncdu is not installed :( Consider installing it!"
+    alias du='du -ch | grep total'
 fi
 alias dut='df -hl --total | grep total' # total disk usage
 
@@ -79,10 +80,11 @@ alias dut='df -hl --total | grep total' # total disk usage
 alias egrep='egrep --color=auto'
 
 # what's my external facing IP ?
-if isPackageInstalled curl; then
-        alias externalip='curl icanhazip.com'
+if isPackageInstalled cur
+then
+    alias externalip='curl icanhazip.com'
 else
-        echo "curl is not installed :( Consider installing it!"
+    echo "curl is not installed :( Consider installing it!"
 fi
 
 # fgrep option :
@@ -105,9 +107,9 @@ alias grep='grep --color=auto'
 
 # invoke hardlink with personal settings
 if [[ "${PERSONAL_hardlink}" == "true" ]]
-  then
-        alias hardlink='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose'
-        alias hardlinkdryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --dry-run --verbose'
+then
+    alias hardlink='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --verbose'
+    alias hardlinkdryrun='hardlink --content --keep-oldest --minimum-size 1K --io-size 16M --cache-size 16M --dry-run --verbose'
 fi
 
 alias h='hist'
@@ -128,10 +130,10 @@ case $(infoDistro) in
     Slackware* )
         alias installpkg='upgradepkg --install-new' ;;
     CentOS*|Fedora*|RedHatEnterpriseServer* )
-        alias installpkg='sudo yum install' 
+        alias installpkg='sudo yum install'
         alias update='yum -y update' ;;
     Ubuntu*|Debian*|Raspbian* )
-        alias installpkg='sudo apt-get --yes' 
+        alias installpkg='sudo apt-get --yes'
         alias update='sudo apt-get update && sudo apt-get upgrade' ;;
 esac
 
@@ -142,9 +144,9 @@ alias io='iostat -d 5 --human -t'
 
 # what's my local IP ?
 if isPackageInstalled curl; then
-        alias localip='ifconfig -a | grep -o '\''inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)'\'' | sed -e '\''s/inet6* //'\'''
+    alias localip='ifconfig -a | grep -o '\''inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)'\'' | sed -e '\''s/inet6* //'\'''
 else
-        echo "curl is not installed :( Consider installing it!"
+    echo "curl is not installed :( Consider installing it!"
 fi
 
 # invoke ls with personal settings
@@ -163,26 +165,26 @@ fi
 #                             if FORMAT is FORMAT1<newline>FORMAT2, then FORMAT1 applies to non-recent files and FORMAT2 to recent files;
 #                             if STYLE is prefixed with 'posix-', STYLE takes effect only outside the POSIX locale
 if [[ "${PERSONAL_ls}" == "true" ]]
-  then
-        alias ls='ls --almost-all --color=always'
-        alias lst='ls --almost-all --color=always --human-readable --reverse -t'
-        alias lsl='ls --almost-all --classify --color=always --human-readable --inode -l --time-style=full-iso'
-        alias lslt='ls --almost-all --classify --color=always --human-readable --inode -l --reverse -t --time-style=full-iso'
+then
+    alias ls='ls --almost-all --color=always'
+    alias lst='ls --almost-all --color=always --human-readable --reverse -t'
+    alias lsl='ls --almost-all --classify --color=always --human-readable --inode -l --time-style=full-iso'
+    alias lslt='ls --almost-all --classify --color=always --human-readable --inode -l --reverse -t --time-style=full-iso'
 fi
 
 # list what node modules are installed on the system
 if [[ "${PERSONAL_ls}" == "true" ]]
-  then
+then
     alias lsnode='lsl /usr/lib64/node_modules/'
-  else
+else
     alias lsnode='lsl --almost-all --color --human-readable --inode -l /usr/lib64/node_modules/'
 fi
 
 # list what packages are installed on the system
 if [[ "${PERSONAL_ls}" == "true" ]]
-  then
+then
     alias lspkgs='lsl /var/log/packages/'
-  else
+else
     alias lspkgs='lsl --almost-all --color --human-readable --inode -l /var/log/packages/'
 fi
 
@@ -190,21 +192,22 @@ fi
 #    -p, --parents     no error if existing, make parent directories as needed,
 #                      with their file modes unaffected by any -m option.
 #    -v, --verbose     print a message for each created directory
-alias mkdir='mkdir parents --verbose' 
+alias mkdir='mkdir parents --verbose'
 
 if isPackageInstalled ccze
-  then
+then
     alias mount='mount|sort|column -t|ccze -A' # Make mount readable!
-  else
+else
     alias mount='mount|sort|column -t' # Make mount readable!
     echo "ccze is not installed :( Consider installing it!"
 fi
 
 # invoke an alternative (and safe) way to move files
-if isPackageInstalled rsync; then
-        alias mv='rsync --archive --compress --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
+if isPackageInstalled rsync
+then
+    alias mv='rsync --archive --compress --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
 else
-        echo "rsync is not installed :( Consider installing it!"
+    echo "rsync is not installed :( Consider installing it!"
 fi
 
 alias publicip='externalip'
@@ -257,10 +260,11 @@ alias watchtail='watch -n .5 tail -n 20'
 alias wget='wget --continue --show-progress'
 
 # who is on my network
-if isPackageInstalled nmap; then
-        alias whosonmynetwork='nmap -sP 192.168.0.0/24'
+if isPackageInstalled nmap
+then
+    alias whosonmynetwork='nmap -sP 192.168.0.0/24'
 else
-        echo "nmap is not installed :( Consider installing it!"
+    echo "nmap is not installed :( Consider installing it!"
 fi
 
 # above here was added by .my_bash_aliases
