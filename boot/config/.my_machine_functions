@@ -2,12 +2,12 @@
 # below here was added by .my_machine_functions
 
 linker() {
-        if [ $# -eq 0 ]
-                then
-                        echo "Please supply a valid path to link the files to/in"
-                else
-                        ln -P ./*.@(flac|mp3|mkv|mp4|jpg|cue|m3u|srt|sub|idx|VOB|avi) --target-directory="$1"
-        fi
+    if [ $# -eq 0 ]
+    then
+        echo "Please supply a valid path to link the files to/in"
+    else
+        ln -P ./*.@(flac|mp3|mkv|mp4|jpg|cue|m3u|srt|sub|idx|VOB|avi) --target-directory="$1"
+    fi
 }
 
 # above here was added by .my_machine_functions
