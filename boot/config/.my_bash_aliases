@@ -51,7 +51,7 @@ fi
 # run continously every m seconds (for n times)
 alias cpu='pidstat 5'
 
-alaias ded='find . -type d -empty -delete'
+alias ded='find . -type d -empty -delete'
 
 # diff options:
 #   -y, --side-by-side     :  output in two columns
