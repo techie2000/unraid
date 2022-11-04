@@ -51,6 +51,8 @@ fi
 # run continously every m seconds (for n times)
 alias cpu='pidstat 5'
 
+alaias ded='find . -type d -empty -delete'
+
 # diff options:
 #   -y, --side-by-side     :  output in two columns
 #       --color[=WHEN]     :  color output; WHEN is 'never', 'always', or 'auto'
