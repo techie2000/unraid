@@ -41,6 +41,12 @@
     "id": "scheduleinstalljq",
     "custom": ""
   },
+    "/boot/config/plugins/user.scripts/scripts/install lnav/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install lnav/script",
+    "frequency": "boot",
+    "id": "scheduleinstalllnav",
+    "custom": ""
+  },
   "/boot/config/plugins/user.scripts/scripts/install mediainfo/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install mediainfo/script",
     "frequency": "boot",
