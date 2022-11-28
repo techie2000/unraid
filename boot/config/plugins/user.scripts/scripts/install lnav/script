@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# The log file navigator, lnav, is an enhanced log file viewer that
+# takes advantage of any semantic information that can be gleaned from
+# the files being viewed, such as timestamps and log levels.
+
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/lnav/lnav-0.11.1-x86_64-1cf.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
