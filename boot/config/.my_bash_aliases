@@ -194,7 +194,7 @@ fi
 #    -p, --parents     no error if existing, make parent directories as needed,
 #                      with their file modes unaffected by any -m option.
 #    -v, --verbose     print a message for each created directory
-alias mkdir='mkdir parents --verbose'
+alias mkdir='mkdir --parents --verbose'
 
 if isPackageInstalled ccze
 then
