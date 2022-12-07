@@ -115,6 +115,12 @@ isPackageInstalled () {
     type "$1" &> /dev/null
 }
 
+# make direcotry and cd into it in one action
+mkcd ()
+{
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
+
 # Detect OS and Services
 nmapos() {
     if [ $# -eq 0 ]
