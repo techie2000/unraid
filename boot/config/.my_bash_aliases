@@ -7,10 +7,23 @@ PERSONAL_df=true
 PERSONAL_hardlink=true
 PERSONAL_ls=true
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+if command -v notify-send >/dev/null 2>&1; then
+  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+fi
+
 alias bzip='bzip2 --keep'
 
-alias   ..='cd ..'
 alias cd..='cd ..' # Pickup and fix my common typo
+alias   up='cd ..'
+alias  up2='cd ../..'
+alias  up3='cd ../../..'
+
+if [[ ${IS_WSL} == true ]]; then
+    # shellcheck disable=2139
+    alias cdh="cd /mnt/c/Users/${USER}" # Change to the home directory in Windows
+fi
 
 # View the calender by typing the first three letters of the month.
 # Optionally add the year as a parameter
@@ -33,6 +46,26 @@ then
     else
         echo "cal is not installed :( Consider installing it!"
     fi
+fi
+
+#  cat options:
+#    -A, --show-all           equivalent to -vET
+#    -b, --number-nonblank    number nonempty output lines, overrides -n
+#    -e                       equivalent to -vE
+#    -E, --show-ends          display $ at end of each line
+#    -n, --number             number all output lines
+#    -s, --squeeze-blank      suppress repeated empty output lines
+#    -t                       equivalent to -vT
+#    -T, --show-tabs          display TAB characters as ^I
+#    -u                       (ignored)
+#    -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB
+#
+# There is a namspace issue on Ubuntu, and bat is likely call batcat to avoid it
+# TO DO: Need to determine the linux flavour here and code for default or ubuntu variant
+if command -v cat >/dev/null 2>&1; then
+  alias cat='cat'
+else
+  alias cat='cat --show-all --number'
 fi
 
 alias chgrp='chgrp --preserve-root' # safety net
@@ -246,7 +279,12 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 #   --progress             : show progress during transfer
 #   --remove-source-files  : sender removes synchronized files (non-dirs)
 #   --stats                : give some file-transfer stats
-alias rsync='rsync --archive --compress --hard-links --human-readable --info=progress2 --open-noatime --recursive --stats --times --verbose --xattrs'
+# TO DO: detmine whether to set notime or open-noatime flavour based on version of rsync installed
+if command -v rsync >/dev/null 2>&1; then
+  alias    cp='rsync --archive --compress --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
+  alias    mv='rsync --archive --compress --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs --remove-source-files'
+  alias rsync='rsync --archive --compress --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
+fi
 
 alias spacehogs='du -hsx * | sort -rh | head -10'  # list top 10 diskspace consumers
 alias showpkgs='lspkgs'
