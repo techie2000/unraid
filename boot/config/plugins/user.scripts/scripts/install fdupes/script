@@ -1,0 +1,13 @@
+
+#!/bin/bash
+
+# FDUPES is a program for identifying or deleting duplicate files
+
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/fdupes/fdupes-2.2.1-x86_64-1cf.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
