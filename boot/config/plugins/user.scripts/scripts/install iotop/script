@@ -1,0 +1,22 @@
+#!/bin/bash
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+
+# take care of pre-requisites
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/python3-3.9.10-x86_64-1.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/l/libffi-3.3-x86_64-3.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
+
+
+
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/iotop/iotop-0.6-x86_64-12cf.txz"
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
