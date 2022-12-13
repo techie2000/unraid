@@ -75,6 +75,11 @@
     "script": "/boot/config/plugins/user.scripts/scripts/install ncdu/script",
     "frequency": "boot",
     "id": "scheduleinstallncdu",
+    "custom": "",
+  "/boot/config/plugins/user.scripts/scripts/install neofetch/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install neofetch/script",
+    "frequency": "boot",
+    "id": "scheduleinstallneofetch",
     "custom": ""
   },
   "/boot/config/plugins/user.scripts/scripts/install nmap/script": {
