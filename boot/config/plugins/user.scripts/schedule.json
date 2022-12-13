@@ -29,6 +29,12 @@
     "id": "scheduleinstalliftop",
     "custom": ""
   },
+  "/boot/config/plugins/user.scripts/scripts/install iotop/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install iotop/script",
+    "frequency": "boot",
+    "id": "scheduleinstalliotop",
+    "custom": ""
+  },
   "/boot/config/plugins/user.scripts/scripts/install iperf3/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install iperf3/script",
     "frequency": "boot",
