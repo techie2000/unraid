@@ -15,6 +15,11 @@
     "script": "/boot/config/plugins/user.scripts/scripts/install borg/script",
     "frequency": "boot",
     "id": "scheduleinstallborg",
+    "custom": "",
+  "/boot/config/plugins/user.scripts/scripts/install fdupes/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install fdupes/script",
+    "frequency": "boot",
+    "id": "scheduleinstallfdupes",
     "custom": ""
   },
   "/boot/config/plugins/user.scripts/scripts/install iftop/script": {
