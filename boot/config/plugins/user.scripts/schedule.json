@@ -15,7 +15,8 @@
     "script": "/boot/config/plugins/user.scripts/scripts/install borg/script",
     "frequency": "boot",
     "id": "scheduleinstallborg",
-    "custom": "",
+    "custom": ""
+  },
   "/boot/config/plugins/user.scripts/scripts/install fdupes/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install fdupes/script",
     "frequency": "boot",
@@ -74,7 +75,8 @@
     "script": "/boot/config/plugins/user.scripts/scripts/install python2/script",
     "frequency": "boot",
     "id": "scheduleinstallpython2",
-    "custom": "",
+    "custom": ""
+  },
   "/boot/config/plugins/user.scripts/scripts/install python3/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install python3/script",
     "frequency": "boot",
