@@ -98,6 +98,12 @@
     "script": "/boot/config/plugins/user.scripts/scripts/install nmap/script",
     "frequency": "boot",
     "id": "scheduleinstallnmap",
+    "custom": "",
+  },
+  "/boot/config/plugins/user.scripts/scripts/install powertop/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install powertop/script",
+    "frequency": "boot",
+    "id": "scheduleinstallpowertop",
     "custom": ""
   },
   "/boot/config/plugins/user.scripts/scripts/install python2/script": {
