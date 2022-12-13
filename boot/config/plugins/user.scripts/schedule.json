@@ -23,6 +23,12 @@
     "id": "scheduleinstallborg",
     "custom": ""
   },
+  "/boot/config/plugins/user.scripts/scripts/install exiftool/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install exiftool/script",
+    "frequency": "boot",
+    "id": "scheduleinstalexiftool",
+    "custom": ""
+  },
   "/boot/config/plugins/user.scripts/scripts/install fdupes/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install fdupes/script",
     "frequency": "boot",
