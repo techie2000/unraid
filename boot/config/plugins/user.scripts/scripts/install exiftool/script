@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# ExifTool is a platform-independent Perl library (Image::ExifTool)
+# plus a command-line application (exiftool) for reading, writing,
+# and editing meta information in image, audio, and video files.
+# ExifTool supports many different types of metadata including EXIF,
+# GPS, IPTC, XMP, JFIF, GeoTIFF, ICC Profile, Photoshop IRB, AFCP,
+# FlashPix, AFCP, and ID3, and maker notes of many digital cameras.
+
+
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/exiftool/exiftool-12.52-x86_64-1cf.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
