@@ -70,6 +70,17 @@
     "id": "scheduleinstallnmap",
     "custom": ""
   },
+  "/boot/config/plugins/user.scripts/scripts/install python2/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install python2/script",
+    "frequency": "boot",
+    "id": "scheduleinstallpython2",
+    "custom": "",
+  "/boot/config/plugins/user.scripts/scripts/install python3/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install python3/script",
+    "frequency": "boot",
+    "id": "scheduleinstallpython3",
+    "custom": ""
+  },
   "/boot/config/plugins/user.scripts/scripts/install screen/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install screen/script",
     "frequency": "boot",
