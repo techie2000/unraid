@@ -17,3 +17,9 @@ cd /tmp/extras || exit
 wget $PACKAGE
 
 upgradepkg --install-new "${PACKAGE##*/}"
+
+
+# Add pip to the mix
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/python-pip-21.3.1-x86_64-2.txz"
+wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
