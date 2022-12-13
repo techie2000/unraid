@@ -15,10 +15,12 @@ tar xvzf "${PACKAGE##*/}"
 
 
 # and take care of pre-requisites
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.39-x86_64-1cf.txz"
-
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/binutils-2.37-x86_64-1.txz"
 wget $PACKAGE
+upgradepkg --install-new "${PACKAGE##*/}"
 
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.39-x86_64-1cf.txz"
+wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
 
