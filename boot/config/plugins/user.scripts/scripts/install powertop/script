@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# PowerTOP is a utility that collects data from your system and presents
+# an overview to help optimize power savings. PowerTOP will identify
+# which tunables and software components are the biggest offenders in
+# slurping up your battery time. PowerTOP updates its display
+# frequently so that you can directly see the impact of any changes you
+# are making.
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/ap/powertop-2.13-x86_64-3.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
