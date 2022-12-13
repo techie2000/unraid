@@ -1,0 +1,4 @@
+
+Install exiftool and dependencies<br>
+Set the Cron to 'At First Array Start Only'<br>
+(/boot/config/plugins/user.scripts/scripts/install exiftool)
