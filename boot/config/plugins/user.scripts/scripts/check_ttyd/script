@@ -1,0 +1,51 @@
+#!/bin/bash
+# restart nginx if ttyd is down
+# add to Unraid User Scripts plugin as script named "check_ttyd"
+# run every 5 minutes: */5 * * * *
+# latest version: https://gist.github.com/ljm42/294968bcecb5308bbcd1c75ae693c680
+PROG="check_ttyd user script"
+EVENT="Unraid Server Notice"
+DESC="Notification from ${PROG}"
+TMP=/tmp/check_ttyd
+
+log() {
+  logger "${PROG}-$1"
+  echo "`date` ${PROG}-$1"
+  echo "`date` ${PROG}-$1" >> $TMP
+}
+
+# try to access the webterminal
+curl --head --max-time 3 http://localhost/webterminal/ &>/dev/null
+if [ "$?" -ne "0" ]
+then
+  if [ -e ${TMP} ]
+  then
+    # hmm, nginx was restarted during the last run and there is still a problem. don't do anything.
+    log "ttyd is still down, not restarted"
+    exit 1
+  fi
+  # restart nginx to restart ttyd
+  /etc/rc.d/rc.nginx restart
+  if [ "$?" -eq "0" ]
+  then
+    SEV="warning"
+    MSG="ttyd down, nginx restarted"
+    log "${MSG}"
+    /usr/local/emhttp/webGui/scripts/notify -e "${EVENT}" -s "${MSG}" -d "${DESC}" -i "${SEV}"
+    exit 0
+  else
+    SEV="alert"
+    MSG="ttyd down, unable to restart nginx"
+    log "${MSG}"
+    /usr/local/emhttp/webGui/scripts/notify -e "${EVENT}" -s "${MSG}" -d "${DESC}" -i "${SEV}"
+    exit 1
+  fi
+else
+  echo "everything is fine"
+  # if the tmp file exists, delete it
+  if [ -e ${TMP} ]
+  then
+    rm ${TMP}
+  fi
+  exit 0
+fi
