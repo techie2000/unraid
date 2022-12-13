@@ -59,6 +59,12 @@
     "id": "scheduleinstalljq",
     "custom": ""
   },
+    "/boot/config/plugins/user.scripts/scripts/install lftp/script": {
+    "script": "/boot/config/plugins/user.scripts/scripts/install lftp/script",
+    "frequency": "boot",
+    "id": "scheduleinstalllftp",
+    "custom": ""
+  },
     "/boot/config/plugins/user.scripts/scripts/install lnav/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/install lnav/script",
     "frequency": "boot",
