@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# lftp is a program that allows sophisticated ftp and http connections
+# to other hosts. lftp can handle many file access methods including
+# ftp, ftps, http, https, hftp, fish and file. Every operation in lftp
+# is reliable, that is any non-fatal error is ignored and the operation
+# is retried. lftp has shell-like command syntax. lftp has a built in
+# mirror feature which can download or upload a whole directory tree.
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/n/lftp-4.9.2-x86_64-3.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
