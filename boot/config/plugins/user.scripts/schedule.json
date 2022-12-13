@@ -1,4 +1,10 @@
 {
+    "/boot/config/plugins/user.scripts/scripts/check_ttyd/script": {
+        "script": "/boot/config/plugins/user.scripts/scripts/check_ttyd/script",
+        "frequency": "custom",
+        "id": "schedulecheck_ttyd",
+        "custom": "*/5 * * * *"
+    },
   "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script": {
     "script": "/boot/config/plugins/user.scripts/scripts/Delete mpt2sas noise from syslog/script",
     "frequency": "hourly",
