@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Neofetch is a command-line system information tool written in bash
+# 3.2+. Neofetch displays information about your operating system,
+# software and hardware in an aesthetic and visually pleasing way. The
+# overall purpose of Neofetch is to be used in screenshots of your
+# system. Neofetch shows the information other people want to see. There
+# are other tools available for proper system statistic/diagnostics.
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/ap/neofetch-20211210_ccd5d9f5-noarch-1.txz"
+
+mkdir /tmp/extras
+cd /tmp/extras || exit
+
+wget $PACKAGE
+
+chmod +x "${PACKAGE##*/}"
+
+mv "${PACKAGE##*/}" /usr/local/sbin/borg
