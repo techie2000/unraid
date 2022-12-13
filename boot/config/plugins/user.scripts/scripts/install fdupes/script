@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# FDUPES is a program for identifying or deleting duplicate files
+# iotop is a Python program with a top-like UI used to show of behalf of which process is the I/O going on.
 
 PACKAGE="https://slack.conraid.net/repository/slackware64-current/fdupes/fdupes-2.2.1-x86_64-1cf.txz"
 
