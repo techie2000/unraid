@@ -134,6 +134,14 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # auto-complete command from history
 export INPUTRC=~/.inputrc
 
+# Add tab completion for SSH hostnames based on ~/.ssh/config
+# ignoring wildcards
+[[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
+	-o "nospace" \
+	-W "$(grep "^Host" ~/.ssh/config | \
+	grep -v "[?*]" | cut -d " " -f2 | \
+	tr ' ' '\n')" scp sftp ssh
+	
 if command -v java >/dev/null 2>&1; then
     export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 fi
