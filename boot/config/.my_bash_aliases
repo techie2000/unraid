@@ -115,7 +115,7 @@ alias dut='df -hl --total | grep total' # total disk usage
 alias egrep='egrep --color=auto'
 
 # what's my external facing IP ?
-if isPackageInstalled cur
+if isPackageInstalled curl
 then
     alias externalip='curl icanhazip.com'
 else
