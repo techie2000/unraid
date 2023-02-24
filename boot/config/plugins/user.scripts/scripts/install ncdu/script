@@ -6,7 +6,7 @@
 # easy to use, and should be able to run in any minimal POSIX-like
 # environment with ncurses installed.
 
-PACKAGE="https://ftp.sotirov-bg.net/pub/contrib/slackware/packages/slackware64-15.0/ncdu-1.17-x86_64-1gds.txz"
+PACKAGE="https://ftp.sotirov-bg.net/pub/contrib/slackware/packages/slackware64-15.0/ncdu-1.18.1-x86_64-1gds.txz"
 CREATE_ALIAS=true
 FOLLOW_SYMLINKS=true
 
