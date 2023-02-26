@@ -5,7 +5,7 @@
 # atop was wtitten and is maintained by Gerlof Langeveld of
 # AT Consultancy bv, Nijmegen, The Netherlands
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/atop/atop-2.7.1-x86_64-1cf.txz"
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/atop/atop-2.8.1-x86_64-1cf.txz"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
