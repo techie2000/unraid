@@ -8,7 +8,7 @@
 # FlashPix, AFCP, and ID3, and maker notes of many digital cameras.
 
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/exiftool/exiftool-12.52-x86_64-1cf.txz"
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/exiftool/exiftool-12.57-x86_64-1cf.txz"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
