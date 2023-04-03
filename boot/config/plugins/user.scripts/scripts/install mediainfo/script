@@ -16,16 +16,29 @@ tar xvzf "${PACKAGE##*/}"
 
 # and take care of pre-requisites
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/binutils-2.37-x86_64-1.txz"
+
 wget $PACKAGE
+
 upgradepkg --install-new "${PACKAGE##*/}"
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.39-x86_64-1cf.txz"
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.40-x86_64-1cf.txz"
+
 wget $PACKAGE
+
 upgradepkg --install-new "${PACKAGE##*/}"
 
 
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/libmediainfo/libmediainfo-22.09-x86_64-1cf.txz"
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/libmediainfo/libmediainfo-23.03-x86_64-1cf.txz"
+
+wget $PACKAGE
+
+upgradepkg --install-new "${PACKAGE##*/}"
+
+
+
+PACKAGE="https://ftp.sotirov-bg.net/pub/contrib/slackware/packages/slackware64-15.0/graphviz-3.0.0-x86_64-1gds.txz"
+wget $PACKAGE
 
 wget $PACKAGE
 
@@ -34,10 +47,9 @@ upgradepkg --install-new "${PACKAGE##*/}"
 
 
 # Get the debian mediainfo package
-PACKAGE="http://ftp.de.debian.org/debian/pool/main/m/mediainfo/mediainfo_20.09-1_amd64.deb"
+PACKAGE="http://ftp.de.debian.org/debian/pool/main/m/mediainfo/mediainfo_22.12-1_amd64.deb"
 
 wget $PACKAGE
-
 
 
 # convert it to Slack package
