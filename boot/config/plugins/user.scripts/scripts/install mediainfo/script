@@ -21,7 +21,7 @@ wget $PACKAGE
 
 upgradepkg --install-new "${PACKAGE##*/}"
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.40-x86_64-1cf.txz"
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.41-x86_64-1cf.txz"
 
 wget $PACKAGE
 
