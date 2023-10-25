@@ -16,9 +16,10 @@ tar xvzf "${PACKAGE##*/}"
 
 # Get the debian dust package
 PACKAGE="bootandy/dust"
+PACKAGE_NAME="du-dust"
 PACKAGE_VERSION="$(curl -sL https://api.github.com/repos/${PACKAGE}/releases/latest | grep -Po '(?<="tag_name": ")[^"]*')"
 PACKAGE_VERSION_SHORT=${PACKAGE_VERSION#v}
-PACKAGE="https://github.com/${PACKAGE}/releases/download/${PACKAGE_VERSION}/du-dust_${PACKAGE_VERSION_SHORT}_amd64.deb"
+PACKAGE="https://github.com/${PACKAGE}/releases/download/${PACKAGE_VERSION}/${PACKAGE_NAME}_${PACKAGE_VERSION_SHORT}_amd64.deb"
 
 wget "$PACKAGE"
 
