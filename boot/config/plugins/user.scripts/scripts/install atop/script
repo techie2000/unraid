@@ -5,8 +5,11 @@
 # atop was wtitten and is maintained by Gerlof Langeveld of
 # AT Consultancy bv, Nijmegen, The Netherlands
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/atop/atop-2.9.0-x86_64-1cf.txz"
+PACKAGE="Atoptool/atop"
 PACKAGE_NAME="atop"
+PACKAGE_VERSION="$(curl -sL https://api.github.com/repos/${PACKAGE}/tags | grep -Po '"name": "\K.*?(?=")' | head -n1)"
+PACKAGE_VERSION_SHORT=${PACKAGE_VERSION#v}
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/${PACKAGE_NAME}/${PACKAGE_NAME}-${PACKAGE_VERSION_SHORT}-x86_64-1cf.txz"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
