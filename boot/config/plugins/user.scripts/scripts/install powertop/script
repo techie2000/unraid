@@ -8,10 +8,16 @@
 # are making.
 
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/ap/powertop-2.13-x86_64-3.txz"
+PACKAGE_NAME="powertop"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
 
 wget $PACKAGE
 
-upgradepkg --install-new "${PACKAGE##*/}"
+PACKAGE="${PACKAGE##*/}"
+upgradepkg --install-new "${PACKAGE}"
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/${PACKAGE_NAME}* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
