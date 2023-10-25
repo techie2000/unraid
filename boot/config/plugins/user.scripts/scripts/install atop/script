@@ -13,7 +13,7 @@ cd /tmp/extras || exit
 
 wget $PACKAGE
 
-$PACKAGE="${PACKAGE##*/}"
+PACKAGE="${PACKAGE##*/}"
 upgradepkg --install-new "${PACKAGE}"
 
 # and make it available for use at boot next time (i.e. before array is strated)
