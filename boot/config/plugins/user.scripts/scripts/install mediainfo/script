@@ -21,6 +21,12 @@ wget $PACKAGE
 
 upgradepkg --install-new "${PACKAGE##*/}"
 
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/"${PACKAGE_NAME}"* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
+
+
+
 PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.41-x86_64-1cf.txz"
 
 wget $PACKAGE
@@ -28,12 +34,22 @@ wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
 
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/"${PACKAGE_NAME}"* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/libmediainfo/libmediainfo-23.03-x86_64-1cf.txz"
+
+
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/libmediainfo/libmediainfo-23.10-x86_64-1cf.txz"
 
 wget $PACKAGE
 
 upgradepkg --install-new "${PACKAGE##*/}"
+
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/"${PACKAGE_NAME}"* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
 
 
 
@@ -45,9 +61,14 @@ wget $PACKAGE
 upgradepkg --install-new "${PACKAGE##*/}"
 
 
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/"${PACKAGE_NAME}"* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
+
+
 
 # Get the debian mediainfo package
-PACKAGE="http://ftp.de.debian.org/debian/pool/main/m/mediainfo/mediainfo_22.12-1_amd64.deb"
+PACKAGE="http://ftp.de.debian.org/debian/pool/main/m/mediainfo/mediainfo_23.04-1_amd64.deb"
 
 wget $PACKAGE
 
@@ -58,3 +79,7 @@ deb2tgz-0.1.1/deb2tgz "${PACKAGE##*/}"
 # and install it
 PACKAGE="${PACKAGE##*/}"
 upgradepkg --install-new "${PACKAGE/.deb/.tgz}"
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/"${PACKAGE_NAME}"* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
