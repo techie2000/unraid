@@ -5,27 +5,33 @@
 # to do with a simple SSH connection. Ncdu aims to be fast, simple and
 # easy to use, and should be able to run in any minimal POSIX-like
 # environment with ncurses installed.
+#
+# now replaced with gncdu which implements NCurses Disk Usage(ncdu) with golang, and is at leaset twice faster as ncdu.
 
-PACKAGE="https://ftp.sotirov-bg.net/pub/contrib/slackware/packages/slackware64-15.0/ncdu-1.19-x86_64-1gds.txz"
+PACKAGE="bastengao/gncdu"
+PACKAGE_NAME="gncdu"
+PACKAGE_VERSION="$(curl -sL https://api.github.com/repos/bastengao/gncdu/tags | grep -oP '"name": "\K.*?(?=")' | head -n1)"
+PACKAGE_VERSION_SHORT=${PACKAGE_VERSION#v}
+PACKAGE="https://github.com/${PACKAGE}/releases/download/${PACKAGE_VERSION}/${PACKAGE_NAME}-linux-amd64"
+
 CREATE_ALIAS=true
-FOLLOW_SYMLINKS=true
+
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
 
-wget $PACKAGE
+wget "$PACKAGE"
 
-upgradepkg --install-new "${PACKAGE##*/}"
+PACKAGE="${PACKAGE##*/}"
+
+chmod +x "$PACKAGE"
+
+mv "$PACKAGE" /usr/local/bin/$PACKAGE_NAME
 
 if [[ "${CREATE_ALIAS}" == "false" ]]
   then
-    echo "ncdu can be used alongside du"
+    echo "gncdu can be used alongside du"
   else
-    if [[ "${FOLLOW_SYMLINKS}" == "false" ]]
-      then
-        alias du='ncdu'
-      else
-        alias du='ncdu --follow-symlinks'
-    fi
-  echo "du can only be used if you first unalias du (to turn off the alias which now points du to ncdu)"
+    alias du='gncdu'
+    echo "du can only be used if you first unalias du (to turn off the alias which now points du to gncdu)"
 fi
