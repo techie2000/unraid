@@ -14,10 +14,16 @@
 # see http://aperiodic.net/screen/quick_reference
 
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/ap/screen-4.9.0-x86_64-1.txz"
+PACKAGE_NAME="screen"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
 
 wget $PACKAGE
 
-upgradepkg --install-new "${PACKAGE##*/}"
+PACKAGE="${PACKAGE##*/}"
+upgradepkg --install-new "${PACKAGE}"
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/${PACKAGE_NAME}* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
