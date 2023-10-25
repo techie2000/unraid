@@ -3,10 +3,16 @@
 # unrar is a freeware app made available by RARLAB
 
 PACKAGE="https://download.salixos.org/x86_64/15.0/salix/ap/unrar-6.1.6-x86_64-1gv.txz"
+PACKAGE_NAME="unrar"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
 
 wget $PACKAGE
 
-upgradepkg --install-new "${PACKAGE##*/}"
+PACKAGE="${PACKAGE##*/}"
+upgradepkg --install-new "${PACKAGE}"
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/${PACKAGE_NAME}* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
