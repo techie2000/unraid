@@ -4,11 +4,20 @@
 # takes advantage of any semantic information that can be gleaned from
 # the files being viewed, such as timestamps and log levels.
 
-PACKAGE="https://slack.conraid.net/repository/slackware64-current/lnav/lnav-0.11.1-x86_64-1cf.txz"
+PACKAGE="tstack/lnav"
+PACKAGE_NAME="lnav"
+PACKAGE_VERSION="$(curl -sL https://api.github.com/repos/${PACKAGE}/releases/latest | grep -Po '(?<="tag_name": ")[^"]*')"
+PACKAGE_VERSION_SHORT=${PACKAGE_VERSION#v}
+PACKAGE="https://slack.conraid.net/repository/slackware64-current/${PACKAGE_NAME}/${PACKAGE_NAME}-${PACKAGE_VERSION_SHORT}-x86_64-1cf.txz"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
 
-wget $PACKAGE
+wget "$PACKAGE"
 
+PACKAGE="${PACKAGE##*/}"
 upgradepkg --install-new "${PACKAGE##*/}"
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/${PACKAGE_NAME}* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
