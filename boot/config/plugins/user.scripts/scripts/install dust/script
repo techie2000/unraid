@@ -15,7 +15,7 @@ tar xvzf "${PACKAGE##*/}"
 
 
 # Get the debian mediainfo package
-PACKAGE="https://github.com/bootandy/dust/releases/download/v0.8.4/du-dust_0.8.4_amd64.deb"
+PACKAGE="https://github.com/bootandy/dust/releases/download/v0.8.6/du-dust_0.8.6_amd64.deb"
 
 wget $PACKAGE
 
