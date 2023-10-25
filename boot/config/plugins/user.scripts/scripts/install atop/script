@@ -6,6 +6,7 @@
 # AT Consultancy bv, Nijmegen, The Netherlands
 
 PACKAGE="https://slack.conraid.net/repository/slackware64-current/atop/atop-2.9.0-x86_64-1cf.txz"
+PACKAGE_NAME="atop"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
@@ -13,3 +14,7 @@ cd /tmp/extras || exit
 wget $PACKAGE
 
 upgradepkg --install-new "${PACKAGE##*/}"
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/${PACKAGE_NAME}* /boot/extra/previous_versions/
+cp "${PACKAGE/.deb/.tgz}" /boot/extra/
