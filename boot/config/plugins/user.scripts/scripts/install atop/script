@@ -17,4 +17,4 @@ upgradepkg --install-new "${PACKAGE##*/}"
 
 # and make it available for use at boot next time (i.e. before array is strated)
 mv /boot/extra/${PACKAGE_NAME}* /boot/extra/previous_versions/
-cp "${PACKAGE/.deb/.tgz}" /boot/extra/
+cp "${PACKAGE##*/}" /boot/extra/
