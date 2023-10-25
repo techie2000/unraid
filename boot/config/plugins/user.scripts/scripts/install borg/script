@@ -12,7 +12,7 @@ PACKAGE="https://github.com/${PACKAGE}/releases/download/${PACKAGE_VERSION_SHORT
 mkdir /tmp/extras
 cd /tmp/extras || exit
 
-wget $PACKAGE
+wget "$PACKAGE"
 
 chmod +x "${PACKAGE##*/}"
 
