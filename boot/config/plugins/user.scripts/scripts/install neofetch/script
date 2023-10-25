@@ -8,12 +8,16 @@
 # are other tools available for proper system statistic/diagnostics.
 
 PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/ap/neofetch-20211210_ccd5d9f5-noarch-1.txz"
+PACKAGE_NAME="neofetch"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
 
 wget $PACKAGE
 
-chmod +x "${PACKAGE##*/}"
+PACKAGE="${PACKAGE##*/}"
+upgradepkg --install-new "${PACKAGE}"
 
-mv "${PACKAGE##*/}" /usr/local/sbin/borg
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/${PACKAGE_NAME}* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
