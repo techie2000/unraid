@@ -3,7 +3,11 @@
 # BorgBackup (short: Borg) is a deduplicating backup program. 
 # Optionally, it supports compression and authenticated encryption.
 
-PACKAGE="https://github.com/borgbackup/borg/releases/download/1.2.2/borg-linux64"
+PACKAGE="borgbackup/borg"
+PACKAGE_NAME="borg-linux64"
+PACKAGE_VERSION="$(curl -sL https://api.github.com/repos/${PACKAGE}/releases/latest | grep -Po '(?<="tag_name": ")[^"]*')"
+PACKAGE_VERSION_SHORT=${PACKAGE_VERSION#v}
+PACKAGE="https://github.com/${PACKAGE}/releases/download/${PACKAGE_VERSION_SHORT}/${PACKAGE_NAME}"
 
 mkdir /tmp/extras
 cd /tmp/extras || exit
