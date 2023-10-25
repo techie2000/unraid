@@ -14,11 +14,11 @@ tar xvzf "${PACKAGE##*/}"
 
 
 
-# Get the debian mediainfo package
-PACKAGE="https://api.github.com/repos/bootandy/dust/releases/latest"
-PACKAGE_VERSION="$(curl -sL ${PACKAGE} | grep -Po '(?<="tag_name": ")[^"]*')"
+# Get the debian dust package
+PACKAGE="bootandy/dust"
+PACKAGE_VERSION="$(curl -sL https://api.github.com/repos/${PACKAGE}/releases/latest | grep -Po '(?<="tag_name": ")[^"]*')"
 PACKAGE_VERSION_SHORT=${PACKAGE_VERSION#v}
-PACKAGE="https://github.com/bootandy/dust/releases/download/${PACKAGE_VERSION}/du-dust_${PACKAGE_VERSION_SHORT}_amd64.deb"
+PACKAGE="https://github.com/${PACKAGE}/releases/download/${PACKAGE_VERSION}/du-dust_${PACKAGE_VERSION_SHORT}_amd64.deb"
 
 wget "$PACKAGE"
 
