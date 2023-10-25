@@ -15,10 +15,26 @@ tar xvzf "${PACKAGE##*/}"
 
 
 # and take care of pre-requisites
-PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/binutils-2.37-x86_64-1.txz"
+PACKAGE="https://slackware.uk/people/alien/multilib/current/gcc-g++-13.2.0_multilib-x86_64-1alien.txz"
+PACKAGE_NAME="gcc-g++"
 
 wget $PACKAGE
 
+PACKAGE="${PACKAGE##*/}"
+upgradepkg --install-new "${PACKAGE##*/}"
+
+# and make it available for use at boot next time (i.e. before array is strated)
+mv /boot/extra/"${PACKAGE_NAME}"* /boot/extra/previous_versions/
+cp "${PACKAGE}" /boot/extra/
+
+
+
+PACKAGE="https://slackware.uk/slackware/slackware64-15.0/slackware64/d/binutils-2.37-x86_64-1.txz"
+PACKAGE_NAME="binutils"
+
+wget $PACKAGE
+
+PACKAGE="${PACKAGE##*/}"
 upgradepkg --install-new "${PACKAGE##*/}"
 
 # and make it available for use at boot next time (i.e. before array is strated)
@@ -28,9 +44,11 @@ cp "${PACKAGE}" /boot/extra/
 
 
 PACKAGE="https://slack.conraid.net/repository/slackware64-current/libzen/libzen-0.4.41-x86_64-1cf.txz"
+PACKAGE_NAME="libzen"
 
 wget $PACKAGE
 
+PACKAGE="${PACKAGE##*/}"
 upgradepkg --install-new "${PACKAGE##*/}"
 
 
@@ -41,9 +59,11 @@ cp "${PACKAGE}" /boot/extra/
 
 
 PACKAGE="https://slack.conraid.net/repository/slackware64-current/libmediainfo/libmediainfo-23.10-x86_64-1cf.txz"
+PACKAGE_NAME="libmediainfo"
 
 wget $PACKAGE
 
+PACKAGE="${PACKAGE##*/}"
 upgradepkg --install-new "${PACKAGE##*/}"
 
 
@@ -54,10 +74,11 @@ cp "${PACKAGE}" /boot/extra/
 
 
 PACKAGE="https://ftp.sotirov-bg.net/pub/contrib/slackware/packages/slackware64-15.0/graphviz-3.0.0-x86_64-1gds.txz"
-wget $PACKAGE
+PACKAGE_NAME="graphviz"
 
 wget $PACKAGE
 
+PACKAGE="${PACKAGE##*/}"
 upgradepkg --install-new "${PACKAGE##*/}"
 
 
@@ -69,6 +90,7 @@ cp "${PACKAGE}" /boot/extra/
 
 # Get the debian mediainfo package
 PACKAGE="http://ftp.de.debian.org/debian/pool/main/m/mediainfo/mediainfo_23.04-1_amd64.deb"
+PACKAGE_NAME="mediainfo"
 
 wget $PACKAGE
 
