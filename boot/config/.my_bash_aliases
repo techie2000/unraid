@@ -73,13 +73,6 @@ alias chmod='chmod --preserve-root' # safety net
 alias chown='chown --preserve-root' # safety net
 alias cls='clear' # For when I get confused with Windows/DOS!
 
-# invoke an alternative way to copy files
-if isPackageInstalled rsync; then
-    alias cp='rsync'
-else
-    echo "rsync is not installed :( Consider installing it!"
-fi
-
 # pidstat flags
 # run continously every m seconds (for n times)
 alias cpu='pidstat 5'
@@ -237,14 +230,6 @@ else
     echo "ccze is not installed :( Consider installing it!"
 fi
 
-# invoke an alternative (and safe) way to move files
-if isPackageInstalled rsync
-then
-    alias mv='rsync --archive --compress --hard-links --human-readable --info=progress2 --open-noatime --stats --times --verbose --xattrs --remove-source-files'
-else
-    echo "rsync is not installed :( Consider installing it!"
-fi
-
 alias publicip='externalip'
 
 # rm options:
@@ -270,20 +255,30 @@ alias rm='rm --recursive --force --interactive=once --preserve-root' # safety ne
 #   -p, --perms            : preserve permissions
 #   -r, --recursive        : recurse into directories
 #   -t, --times            : preserve modification times
+#   -T, --temp-dir=DIR     : create temporary files in directory DIR
 #   -v, --verbose          : increase verbosity
 #   -X, --xattrs           : preserve extended attributes
 #   -z, --compress         : compress file data during the transfer
+#   --devices              : preserve device files (super-user only)
 #   --info=FLAGS           : fine-grained informational verbosity
 #   --noatime              : do not alter atime when opening source files
 #   --open-noatime         : the new version of --noatime (Which to use depends on which flavour of rsync you have)
+#   --partial              : keep partially transferred files
+#   --partial-dir=DIR      : put a partially transferred file into DIR
+#   --preallocate          : allocate dest files before writing them
 #   --progress             : show progress during transfer
 #   --remove-source-files  : sender removes synchronized files (non-dirs)
+#   --skip-compress=LIST   : skip compressing files with suffix in LIST
+#   --specials             : preserve special files
 #   --stats                : give some file-transfer stats
 # TO DO: detmine whether to set notime or open-noatime flavour based on version of rsync installed
 if command -v rsync >/dev/null 2>&1; then
-  alias    cp='rsync --archive --compress --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
-  alias    mv='rsync --archive --compress --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs --remove-source-files'
-  alias rsync='rsync --archive --compress --hard-links --human-readable --info=progress2 --noatime --recursive --stats --times --verbose --xattrs'
+  # invoke an alternative way to copy files
+  alias    cp='rsync --acls --atimes --compress --devices --group --hard-links --human-readable --links --owner --perms --partial --partial-dir=.rsync-partial --preallocate --progress --recursive --skip-compress=3g2/3gp/3gpp/3mf/7z/aac/ace/amr/apk/appx/appxbundle/arc/arj/asf/avi/br/bz2/cab/crypt5/crypt7/crypt8/deb/dmg/drc/ear/gz/flac/flv/gpg/h264/h265/heif/iso/jar/jp2/jpg/jpeg/lz/lz4/lzma/lzo/m4a/m4p/m4v/mkv/msi/mov/mp3/mp4/mpeg/mpg/mpv/oga/ogg/ogv/opus/pack/png/qt/rar/rpm/rzip/s7z/sfx/svgz/tbz/tgz/tlz/txz/vob/webm/webp/wim/wma/wmv/xz/z/zip/zst --specials --stats --temp-dir=.rsync-partial --times --xattrs'
+  # invoke an alternative (and safe) way to move files
+  alias    mv='rsync --acls --atimes --compress --devices --group --hard-links --human-readable --links --owner --perms --partial --partial-dir=.rsync-partial --preallocate --progress --recursive --skip-compress=3g2/3gp/3gpp/3mf/7z/aac/ace/amr/apk/appx/appxbundle/arc/arj/asf/avi/br/bz2/cab/crypt5/crypt7/crypt8/deb/dmg/drc/ear/gz/flac/flv/gpg/h264/h265/heif/iso/jar/jp2/jpg/jpeg/lz/lz4/lzma/lzo/m4a/m4p/m4v/mkv/msi/mov/mp3/mp4/mpeg/mpg/mpv/oga/ogg/ogv/opus/pack/png/qt/rar/rpm/rzip/s7z/sfx/svgz/tbz/tgz/tlz/txz/vob/webm/webp/wim/wma/wmv/xz/z/zip/zst --specials --stats --temp-dir=.rsync-partial --times --xattrs --remove-source-files'
+  # rsync set to behave like cp (copy) command
+  alias rsync='rsync --acls --atimes --compress --devices --group --hard-links --human-readable --links --owner --perms --partial --partial-dir=.rsync-partial --preallocate --progress --recursive --skip-compress=3g2/3gp/3gpp/3mf/7z/aac/ace/amr/apk/appx/appxbundle/arc/arj/asf/avi/br/bz2/cab/crypt5/crypt7/crypt8/deb/dmg/drc/ear/gz/flac/flv/gpg/h264/h265/heif/iso/jar/jp2/jpg/jpeg/lz/lz4/lzma/lzo/m4a/m4p/m4v/mkv/msi/mov/mp3/mp4/mpeg/mpg/mpv/oga/ogg/ogv/opus/pack/png/qt/rar/rpm/rzip/s7z/sfx/svgz/tbz/tgz/tlz/txz/vob/webm/webp/wim/wma/wmv/xz/z/zip/zst --specials --stats --temp-dir=.rsync-partial --times --xattrs'
 fi
 
 alias spacehogs='du -hsx * | sort -rh | head -10'  # list top 10 diskspace consumers
